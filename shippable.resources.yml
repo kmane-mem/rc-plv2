@@ -4,8 +4,7 @@ resources:
     type: image
     integration: plv2-docker
     pointer:
-      sourceName: 
-        - shippabledocker/sample_node_pvt     
+      sourceName: shippabledocker/sample_node_pvt     
     seed:
       versionName: latest
       

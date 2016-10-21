@@ -8,7 +8,7 @@ jobs:
   - name: rc-testmani
     type: manifest
     steps:
-      - IN: testimg1
+      - IN: testimg
       - IN: rc-tg1
       
   - name: rc-ecsdeployup

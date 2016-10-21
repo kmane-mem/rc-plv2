@@ -178,7 +178,7 @@ resources:
       readOnlyRootFilesystem : true
       network : "bridge"
       
-  - name: rc-scale2
+  - name: rc-replica2
     type: replicas
     version:
       count: 2

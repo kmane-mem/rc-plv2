@@ -3,10 +3,10 @@ resources:
   - name: testimg1
     type: image
     integration: plv2-docker
-    #pointer:
+    pointer:
       sourceName: "shippabledocker/sample_node_pvt"
-    seed:
-      versionName: "latest"
+    #seed:
+    #  versionName: "latest"
       
   - name: rc-ecscluster
     type: cluster

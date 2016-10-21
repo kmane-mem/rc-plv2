@@ -1,20 +1,12 @@
 resources:
-
-  - name: rc-img1
-    type: image
-    integration: plv2-docker
-    pointer:
-      sourceName: "shippabledocker/pipelinev2"
-    seed:
-      versionName: "deploy.1"
       
   - name: testimg1
     type: image
     integration: plv2-docker
     pointer:
-      sourceName: "shippabledocker/pipelinev2"
+      sourceName: shippabledocker/sample_node_pvt
     seed:
-      versionName: "deploy.2"
+      versionName: "latest"
       
   - name: rc-ecscluster
     type: cluster
@@ -22,3 +14,11 @@ resources:
     pointer:
       sourceName : "testCL"
       region: "us-west-2"
+  
+  - name: rc-img1
+    type: image
+    integration: plv2-docker
+    pointer:
+      sourceName: "shippabledocker/pipelinev2"
+    seed:
+      versionName: "deploy.2"

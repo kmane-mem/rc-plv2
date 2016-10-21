@@ -24,7 +24,7 @@ jobs:
   - name: extdopt-manifest2
     type: manifest
     steps:
-      - IN: rc-image6entrypoint
+      - IN: rc-image7workingdir
       - IN: extdoptecs-dopts5
       - IN: extdopt-tg2
       

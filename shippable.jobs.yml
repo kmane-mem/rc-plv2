@@ -1,28 +1,94 @@
 jobs:
-  - name: rc-man1
+      
+#MANIFESTS
+      
+  - name: extdopt-manifest1
     type: manifest
     steps:
-      - IN: rc-img1
-      - IN: rc-tg1
+      - IN: fl-image1
+       # versionNumber: 100
+      - IN: extdopt-tg1
+    flags:
+      - man_flextdpots
       
-  - name: rc-testmani
+  - name: extdopt-manifest2multiimg
     type: manifest
     steps:
-      - IN: testimg
-      - IN: rc-tg1
+      - IN: fl-image6entrypoint
+      - IN: fl-image7workingdir
+      - IN: extdoptecs-dopts5
+        applyTo:
+          - fl-image6entrypoint
+      - IN: extdopt-tg2
       
-  - name: rc-ecsdeployup
+  - name: extdopt-manifest3entrypt
+    type: manifest
+    steps:
+      - IN: fl-image6entrypoint
+      - IN: extdopt-tg3
+      
+  - name: extdopt-manifest4driftking
+    type: manifest
+    steps:
+      - IN: fl-image7workingdir
+      - IN: extdopt-tg4
+      
+#DEPLOYMENTS 
+
+  - name: extdopt-ecsdeploywdir
     type: deploy
     steps:
-      - IN: rc-man1
-      - IN: rc-ecscluster
+      - IN: extdopt-manifest2multiimg
+      - IN: fl-ecscluster
       - TASK: managed
         deployMethod: upgrade
         
-  - name: rctestdeploy-ecs
+  - name: extdopt-ecsdeployept
     type: deploy
     steps:
-      - IN: rc-testmani
-      - IN: rc-ecscluster
+      - IN: extdopt-manifest3entrypt
+      - IN: extdoptecs-dopts4
+      - IN: fl-ecscluster
       - TASK: managed
         deployMethod: upgrade
+        
+#   - name: extdopt-tpdeployept #First deploy something in tripub n copy conatiner name n give in fltp-dopts2 resource
+#     type: deploy
+#     steps:
+#       - IN: extdopt-manifest3entrypt
+#       - IN: extdopttp-dopts2
+#       - IN: fl-tripubcluster
+#       - TASK: managed
+#         deployMethod: upgrade
+
+  - name: extdopt-tpdeploywdir
+    type: deploy
+    steps:
+      - IN: extdopt-manifest4driftking
+      - IN: extdopttp-dopts1
+      - IN: fl-tripubcluster
+      - TASK: managed
+        deployMethod: upgrade
+        
+  - name: extdopt-gkedeploywdir
+    type: deploy
+    steps:
+      - IN: extdopt-manifest4driftking
+      - IN: extdoptgke-dopts3
+      - IN: fl-gkecluster
+      - TASK: managed
+        deployMethod: upgrade
+        
+  - name: extdopt-ddcdeployept
+    type: deploy
+    steps:
+      - IN: extdopt-manifest3entrypt
+      - IN: extdoptddc-dopts6
+      - IN: fl-ddccluster
+        
+#   - name: extdopt-ddcdeploywdir #First deploy something in ddc n copy conatiner name n give in extdopt-ddc2 resource
+#     type: deploy
+#     steps:
+#       - IN: extdopt-manifest4driftking
+#       - IN: extdoptddc-dopts7
+#       - IN: fl-ddccluster

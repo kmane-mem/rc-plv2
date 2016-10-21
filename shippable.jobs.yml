@@ -46,6 +46,7 @@ jobs:
     type: deploy
     steps:
       - IN: extdopt-manifest2
+      - IN: rc-scale2
       - IN: rc-ecscluster
       - TASK: managed
         deployMethod: upgrade

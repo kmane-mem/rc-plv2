@@ -112,9 +112,9 @@ resources:
     type: dockerOptions
     version:
       links:
-        - "rc-image7workingdir"
+        - "rc-img1"
       volumesFrom:
-        - "rc-image7workingdir:ro"
+        - "rc-img1:ro"
       user: "driftking"
       workingDir: "/makemeworking"
       cmd:

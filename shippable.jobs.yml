@@ -21,6 +21,13 @@ jobs:
           - rc-image6entrypoint
       - IN: extdopt-tg2
       
+  - name: extdopt-manifest2
+    type: manifest
+    steps:
+      - IN: rc-image6entrypoint
+      - IN: extdoptecs-dopts5
+      - IN: extdopt-tg2
+      
   - name: extdopt-manifest3entrypt
     type: manifest
     steps:
@@ -35,10 +42,10 @@ jobs:
       
 #DEPLOYMENTS 
 
-  - name: extdopt-ecsdeploywdir
+  - name: extdopt-ecsdeploywdir1
     type: deploy
     steps:
-      - IN: extdopt-manifest2multiimg
+      - IN: extdopt-manifest2
       - IN: rc-ecscluster
       - TASK: managed
         deployMethod: upgrade

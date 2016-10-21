@@ -24,8 +24,9 @@ resources:
       versionName: "deploy.1"
       
   - name: testimg
-    type: cluster
-    integration: plv2-ecs
+    type: image
+    integration: plv2-docker
     pointer:
-      sourceName : "testCL"
-      region: "us-west-2"
+      sourceName: "shippabledocker/pipelinev2"
+    seed:
+      versionName: "deploy.2"

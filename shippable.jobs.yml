@@ -5,32 +5,32 @@ jobs:
   - name: extdopt-manifest1
     type: manifest
     steps:
-      - IN: fl-image1
+      - IN: rc-img1
        # versionNumber: 100
       - IN: extdopt-tg1
     flags:
-      - man_flextdpots
+      - man_extdopts
       
   - name: extdopt-manifest2multiimg
     type: manifest
     steps:
-      - IN: fl-image6entrypoint
-      - IN: fl-image7workingdir
+      - IN: rc-image6entrypoint
+      - IN: rc-image7workingdir
       - IN: extdoptecs-dopts5
         applyTo:
-          - fl-image6entrypoint
+          - rc-image6entrypoint
       - IN: extdopt-tg2
       
   - name: extdopt-manifest3entrypt
     type: manifest
     steps:
-      - IN: fl-image6entrypoint
+      - IN: rc-image6entrypoint
       - IN: extdopt-tg3
       
   - name: extdopt-manifest4driftking
     type: manifest
     steps:
-      - IN: fl-image7workingdir
+      - IN: rc-image7workingdir
       - IN: extdopt-tg4
       
 #DEPLOYMENTS 
@@ -39,7 +39,7 @@ jobs:
     type: deploy
     steps:
       - IN: extdopt-manifest2multiimg
-      - IN: fl-ecscluster
+      - IN: rc-ecscluster
       - TASK: managed
         deployMethod: upgrade
         
@@ -48,7 +48,7 @@ jobs:
     steps:
       - IN: extdopt-manifest3entrypt
       - IN: extdoptecs-dopts4
-      - IN: fl-ecscluster
+      - IN: rc-ecscluster
       - TASK: managed
         deployMethod: upgrade
         
@@ -57,7 +57,7 @@ jobs:
 #     steps:
 #       - IN: extdopt-manifest3entrypt
 #       - IN: extdopttp-dopts2
-#       - IN: fl-tripubcluster
+#       - IN: rc-tripubcluster
 #       - TASK: managed
 #         deployMethod: upgrade
 
@@ -66,7 +66,7 @@ jobs:
     steps:
       - IN: extdopt-manifest4driftking
       - IN: extdopttp-dopts1
-      - IN: fl-tripubcluster
+      - IN: rc-tripubcluster
       - TASK: managed
         deployMethod: upgrade
         
@@ -75,7 +75,7 @@ jobs:
     steps:
       - IN: extdopt-manifest4driftking
       - IN: extdoptgke-dopts3
-      - IN: fl-gkecluster
+      - IN: rc-gkecluster
       - TASK: managed
         deployMethod: upgrade
         
@@ -84,11 +84,11 @@ jobs:
     steps:
       - IN: extdopt-manifest3entrypt
       - IN: extdoptddc-dopts6
-      - IN: fl-ddccluster
+      - IN: rc-ddccluster
         
 #   - name: extdopt-ddcdeploywdir #First deploy something in ddc n copy conatiner name n give in extdopt-ddc2 resource
 #     type: deploy
 #     steps:
 #       - IN: extdopt-manifest4driftking
 #       - IN: extdoptddc-dopts7
-#       - IN: fl-ddccluster
+#       - IN: rc-ddccluster

@@ -177,3 +177,8 @@ resources:
           max-size: 50m
       readOnlyRootFilesystem : true
       network : "bridge"
+      
+  - name: rc-scale2
+    type: replicas
+    version:
+      count: 2

@@ -4,7 +4,8 @@ resources:
     type: image
     integration: plv2-docker
     pointer:
-      sourceName: shippabledocker/sample_node_pvttest
+      sourceName: 
+        - shippabledocker/sample_node_pvt     
     seed:
       versionName: latest
       
@@ -21,4 +22,4 @@ resources:
     pointer:
       sourceName: "shippabledocker/pipelinev2"
     seed:
-      versionName: "deploy.2"
+      versionName: "deploy.1"

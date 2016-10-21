@@ -6,7 +6,7 @@ resources:
     pointer:
       sourceName: "shippabledocker/sample_node_pvt"
     seed:
-      versionName: "latest"
+      versionName: 
       
   - name: rc-ecscluster
     type: cluster

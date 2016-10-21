@@ -1,6 +1,6 @@
 resources:
       
-  - name: rc-plv2_master
+  - name: testimg
     type: image
     integration: plv2-docker
     pointer:
@@ -22,3 +22,10 @@ resources:
       sourceName: "shippabledocker/pipelinev2"
     seed:
       versionName: "deploy.1"
+      
+  - name: testimg
+    type: cluster
+    integration: plv2-ecs
+    pointer:
+      sourceName : "testCL"
+      region: "us-west-2"

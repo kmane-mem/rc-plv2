@@ -1,6 +1,6 @@
 resources:
       
-  - name: rc-plv2
+  - name: rc-plv2_master
     type: image
     integration: plv2-docker
     pointer:

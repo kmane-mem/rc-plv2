@@ -1,8 +1,8 @@
 resources:
       
   - name: testimg1
-   # type: image
-    integration: plv2-docker
+    type: image
+    integration: plv2-dockertest
     pointer:
       sourceName: "shippabledocker/sample_node_pvt"
     seed:

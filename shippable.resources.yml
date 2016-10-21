@@ -1,0 +1,10 @@
+resources:
+
+  - name: rc-img1
+    type: image
+    integration: plv2-docker
+    pointer:
+      sourceName: "shippabledocker/pipelinev2"
+    seed:
+      versionName: "deploy.1"
+      

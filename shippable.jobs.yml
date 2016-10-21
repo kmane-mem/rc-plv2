@@ -5,10 +5,24 @@ jobs:
       - IN: rc-img1
       - IN: rc-tg1
       
+  - name: rc-testmani
+    type: manifest
+    steps:
+      - IN: testimg1
+      - IN: rc-tg1
+      
   - name: rc-ecsdeployup
     type: deploy
     steps:
       - IN: rc-man1
+      - IN: rc-ecscluster
+      - TASK: managed
+        deployMethod: upgrade
+        
+  - name: rctestdeploy-ecs
+    type: deploy
+    steps:
+      - IN: rc-testmani
       - IN: rc-ecscluster
       - TASK: managed
         deployMethod: upgrade

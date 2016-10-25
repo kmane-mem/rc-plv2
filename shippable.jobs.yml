@@ -1,12 +1,29 @@
 jobs:
-  - name: rc-man1
+  - name: ecs-man1
     type: manifest
     steps:
       - IN: rc-img1
       - IN: rc-tg1
 
-  - name: rc-ddcdeploy
+  - name: up-ecs
     type: deploy
     steps:
       - IN: rc-man1
-      - IN: rc-ddccluster
+      - IN: rc-ecscluster
+      - TASK: managed
+        deployMethod: upgrade
+      
+  - name: bg-ecs
+    type: deploy
+    steps:
+      - IN: rc-man1
+      - IN: rc-ecscluster
+   
+  - name: rp-ecs
+    type: deploy
+    steps:
+      - IN: rc-man1
+      - IN: rc-ecscluster
+      - TASK: managed
+        deployMethod: replace
+  

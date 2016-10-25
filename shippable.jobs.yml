@@ -8,22 +8,21 @@ jobs:
   - name: up-ecs
     type: deploy
     steps:
-      - IN: rc-man1
-      - IN: rc-ecscluster
+      - IN: ecs-man1
+      - IN: ecscluster
       - TASK: managed
         deployMethod: upgrade
       
   - name: bg-ecs
     type: deploy
     steps:
-      - IN: rc-man1
-      - IN: rc-ecscluster
+      - IN: ecs-man1
+      - IN: ecscluster
    
   - name: rp-ecs
     type: deploy
     steps:
-      - IN: rc-man1
-      - IN: rc-ecscluster
+      - IN: ecs-man1
+      - IN: ecscluster
       - TASK: managed
-        deployMethod: replace
-  
+        deployMethod: replace  

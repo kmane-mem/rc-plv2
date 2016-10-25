@@ -26,3 +26,9 @@ jobs:
       - IN: rc-ecscluster
       - TASK: managed
         deployMethod: upgrade
+
+  - name: rc-ddcdeploy
+    type: deploy
+    steps:
+      - IN: rc-man1
+      - IN: rc-ddccluster

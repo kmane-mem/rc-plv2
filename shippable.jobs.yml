@@ -36,3 +36,39 @@ jobs:
       - IN: ecscluster
       - TASK: managed
         deployMethod: replace  
+        
+  - name: ecs-lbmani80
+    type: manifest
+    steps:
+      - IN: lb-myapp3ecs
+      - IN: lb-ecsdopts80
+      
+  - name: ecs-lbmani3000
+    type: manifest
+    steps:
+      - IN: lb-myapp2ecs
+      - IN: lb-ecsdopts3000
+      
+  - name: lb-ecsdeploy80
+    type: deploy
+    steps:
+      - IN: ecs-lbmani80
+      - IN: lb-ecscluster
+      - IN: ecs-lb80
+        applyTo:
+          - manifest: ecs-lbmani80
+            image: lb-myapp3ecs
+            port: 80
+      - TASK: managed
+        deployMethod: replace
+     
+  - name: lb-ecsdeploy3000
+    type: deploy
+    steps:
+      - IN: ecs-lbmani3000
+      - IN: lb-ecscluster
+      - IN: ecs-lb3000
+        applyTo:
+          - manifest: ecs-lbmani3000
+            image: lb-myapp2ecs
+            port: 3000

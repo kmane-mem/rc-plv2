@@ -7,6 +7,13 @@ resources:
       sourceName : "testCL"
       region: "us-west-2"
       
+  - name: lb-ecscluster
+    type: cluster
+    integration: plv2-ecs
+    pointer:
+      sourceName : "default" #name of the cluster we are deploying
+      region: "us-west-2"
+      
   - name: ecs-img
     type: image
     integration: plv2-docker
@@ -15,12 +22,42 @@ resources:
     seed:
       versionName: "deploy.3"
       
+  - name: lb-myapp3ecs
+    type: image
+    integration: scriptnull-docker
+    pointer:
+      sourceName: "scriptnull/sample_node"
+      isPull: true
+    seed:
+      versionName: "myapp3" # exposes server in port 80:80
+
+  - name: lb-myapp2ecs
+    type: image
+    integration: scriptnull-docker
+    pointer:
+      sourceName: "scriptnull/sample_node"
+      isPull: true
+    seed:
+      versionName: "myapp2" # exposes server in port 80:3000
+      
   - name: ecs-dopts
     type: dockerOptions
     version:
       memory: 60
       #links:
        # - "plv2-manifest8redis_0_0_055d5014-109c-4c84-9bbe-3009a523:testenv" #invalid link for rp, bg n up all 3
+      
+  - name: lb-ecsdopts80
+    type: dockerOptions
+    version:
+      portMappings:
+        - "80:80"
+        
+  - name: lb-ecsdopts3000
+    type: dockerOptions
+    version:
+      portMappings:
+        - "80:3000"
       
   - name: ecs-params1
     type: params
@@ -33,4 +70,15 @@ resources:
   - name: ecs-scale2
     type: replicas
     version:
-      count: 3
+      count: 2
+      
+  - name: ecs-lb3000
+    type: loadBalancer
+    pointer:
+      sourceName: EC2Contai-EcsElast-GPCOXIIKWPUJ
+
+  - name: ecs-lb80
+    type: loadBalancer
+    pointer:
+      sourceName: exampleLB
+      

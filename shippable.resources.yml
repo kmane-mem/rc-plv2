@@ -51,7 +51,7 @@ resources:
     type: dockerOptions
     version:
       portMappings:
-        - "80:80"
+        - "8080:80"
         
   - name: lb-ecsdopts3000
     type: dockerOptions
@@ -83,6 +83,6 @@ resources:
       sourceName: exampleLB
   
   - name: ecs-lb80test
-    type: loadBalancer
+    type: loadBalancertest
     pointer:
       sourceName: EC2Contai-EcsElast-GPCOXIIKWPUJ

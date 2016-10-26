@@ -7,10 +7,12 @@ jobs:
   - name: ecs-man1
     type: manifest
     steps:
-     ## - IN: ecs-man2
+      - IN: ecs-man2
       ##- IN: rc-img1
       - IN: ecs-dopts
       - IN: ecs-params1
+        applyTo:
+          - ecs-img
       ##- IN: ecs-scale2
       - IN: ecs-img
       - IN: rc-tg1

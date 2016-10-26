@@ -16,9 +16,9 @@ resources:
       versionName: "deploy.3"
       
   - name: ecs-dopts
-    type: dockerOptionstest
+    type: dockerOptions
     version:
-      memory: 100
+      memory: 90
       
   - name: ecs-params1
     type: params

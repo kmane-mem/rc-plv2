@@ -15,3 +15,8 @@ resources:
     seed:
       versionName: "deploy.3"
       
+  - name: ecs-dopts
+    type: dockerOptions
+    version:
+      memory: 100
+      

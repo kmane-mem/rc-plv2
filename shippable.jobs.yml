@@ -1,12 +1,92 @@
 jobs:
-  - name: rc-man1
+  - name: dep-man1test
     type: manifest
     steps:
       - IN: rc-img1
       - IN: rc-tg1
 
-  - name: rc-ddcdeploy
+  - name: dep-ddcdeploytest
     type: deploy
     steps:
-      - IN: rc-man1
+      - IN: dep-man1test
       - IN: rc-ddccluster
+    on_start:
+      - NOTIFY: dep-slacktest
+      - NOTIFY: dep-emailtest
+      - script: echo 'start'
+    on_success:
+      - NOTIFY: dep-slacktest
+      - NOTIFY: dep-emailtest
+      - script: echo 'success'
+    on_failure:
+      - NOTIFY: dep-slacktest
+      - NOTIFY: dep-emailtest
+      - script: echo 'failure'
+      
+  - name: dep-dcldeploytest
+    type: deploy
+    steps:
+      - IN: dep-man1test
+      - IN: rc-dclcluster
+    on_start:
+      - NOTIFY: dep-slacktest
+      - NOTIFY: dep-emailtest
+    on_success:
+      - NOTIFY: dep-slacktest
+      - NOTIFY: dep-emailtest
+    on_failure:
+      - NOTIFY: dep-slacktest
+      - NOTIFY: dep-emailtest
+      
+  - name: dep-ecsdeploytest
+    type: deploy
+    steps:
+      - IN: dep-man1test
+      - IN: rc-ecscluster
+    on_start:
+      - NOTIFY: dep-slacktest
+      - NOTIFY: dep-emailtest
+    on_success:
+      - NOTIFY: dep-slacktest
+      - NOTIFY: dep-emailtest
+    on_failure:
+      - NOTIFY: dep-slacktest
+      - NOTIFY: dep-emailtest
+
+  - name: dep-gkedeploytest
+    type: deploy
+    steps:
+      - IN: dep-man1test
+      - IN: rc-gkecluster
+      - TASK: managed
+        deployMethod: upgrade
+    on_start:
+      - NOTIFY: dep-slacktest
+      - NOTIFY: dep-emailtest
+    on_success:
+      - NOTIFY: dep-slacktest
+      - NOTIFY: dep-emailtest
+    on_failure:
+      - NOTIFY: dep-slacktest
+      - NOTIFY: dep-emailtest
+      
+  - name: dep-tpdeploytest
+    type: deploy
+    steps:
+      - IN: dep-man1test
+      - IN: rc-tripubcluster
+      - TASK: managed
+        deployMethod: replace
+    on_start:
+      - NOTIFY: dep-slacktest
+      - NOTIFY: dep-emailtest
+      - script: echo 'start'
+    on_success:
+      - NOTIFY: dep-slacktest
+      - NOTIFY: dep-emailtest
+      - script: echo 'success'
+    on_failure:
+      - NOTIFY: dep-slacktest
+      - NOTIFY: dep-emailtest
+      - script: echo 'failure'
+      

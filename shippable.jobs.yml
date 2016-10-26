@@ -47,7 +47,7 @@ jobs:
     type: manifest
     steps:
       - IN: lb-myapp2ecs
-      #- IN: lb-ecsdopts3000
+      - IN: lb-ecsdopts3000
       
   - name: lb-ecsdeploy80
     type: deploy
@@ -70,7 +70,7 @@ jobs:
       - IN: ecs-lb3000
         applyTo:
           - manifest: ecs-lbmani3000
-            image: lb-myapp2ecs
-          #  port: 3000
+            image: lb-myapp3ecs
+            port: 80
       - TASK: managed
         deployMethod: replace

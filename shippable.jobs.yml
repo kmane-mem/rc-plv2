@@ -25,19 +25,19 @@ jobs:
       - TASK: managed
         deployMethod: upgrade
       
- # - name: bg-ecs
-  #  type: deploy
-   # steps:
-    #  - IN: ecs-man1
-     # - IN: ecscluster
+  - name: bg-ecs
+    type: deploy
+    steps:
+      - IN: ecs-man1
+      - IN: ecscluster
    
-  #- name: rp-ecs
-   # type: deploy
-    #steps:
-     # - IN: ecs-man1
-      #- IN: ecscluster
-      #- TASK: managed
-       # deployMethod: replace  
+  - name: rp-ecs
+    type: deploy
+    steps:
+      - IN: ecs-man1
+      - IN: ecscluster
+      - TASK: managed
+        deployMethod: replace  
         
   - name: ecs-lbmani80
     type: manifest

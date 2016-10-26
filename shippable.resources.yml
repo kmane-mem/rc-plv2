@@ -1,7 +1,7 @@
 resources:
   #NOTIFICATIONS
       
-  - name: dep-slack
+  - name: dep-slacktest
     type: notification
     integration: "plv2-slackcock1"
     pointer:
@@ -10,7 +10,7 @@ resources:
         - "#pipeline-public"
         - "@shiphitchcock1"
 
-  - name: dep-email
+  - name: dep-emailtest
     type: notification
     pointer:
       method: email

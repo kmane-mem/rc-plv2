@@ -20,3 +20,11 @@ resources:
     version:
       memory: 100
       
+  - name: ecs-params1
+    type: params
+    version:
+      params:
+        MONGO_API_URL: "localhost:28017"
+        TEST: rc
+        secure: OhqwZ4+PS+n6195VCkqCZKhpDvfrsLO2WrVHkWrV3MAU3vAbpTE2jh4fKy5h251Vc0GYB0OB6QHmhEQFKBGTlbQXP/dz8PpQisMmBtk2Jfim6v5DbDB1aFHBvRsiFoXSh+3syi6tO2RfPEHhRj0ZQOaRUNSn8QMPGIs2cBL6NpHAwF07Rai1xhpPD4RIekyODo5uaTQc7o6ZAzqx53YaH5gRAL1jxUPu4QJCJo5r8jPy9RHZ4vWpwD+I1qkQuL1898wF5S6q6jVAcG2KGVQQ3N/nuf9++ZoRK5y506OdBpab/ZWmz+VZYZE0l5TImkEWJXMnxgHGbFw0LZHyq15YRw==
+      

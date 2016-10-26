@@ -54,11 +54,11 @@ jobs:
     steps:
       - IN: ecs-lbmani80
       - IN: lb-ecscluster
-      - IN: ecs-lb80test
+      - IN: ecs-lb80
         applyTo:
           - manifest: ecs-lbmani80
             image: lb-myapp3ecs
-            port: 80
+            port: 8080:80
       - TASK: managed
         deployMethod: replace
      

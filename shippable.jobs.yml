@@ -5,6 +5,7 @@ jobs:
       - IN: rc-img1
       - IN: ecs-dopts
       - IN: ecs-params1
+      - IN: ecs-img
       - IN: rc-tg1
 
   - name: up-ecs

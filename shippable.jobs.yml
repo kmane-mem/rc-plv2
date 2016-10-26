@@ -62,7 +62,7 @@ jobs:
       - TASK: managed
         deployMethod: replace
      
-  - name: lb-ecsdeploy3000
+  - name: lb-ecsdeploy3000up
     type: deploy
     steps:
       - IN: ecs-lbmani3000
@@ -72,3 +72,5 @@ jobs:
           - manifest: ecs-lbmani3000
             image: lb-myapp2ecs
             port: 3000
+      - TASK: managed
+        deployMethod: upgrade

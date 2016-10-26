@@ -1,5 +1,5 @@
 triggers:
-   - name: rc-tg1
+   - name: dep-tg1test
      type: trigger
      version:
        counter: 0

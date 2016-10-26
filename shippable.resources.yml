@@ -85,4 +85,4 @@ resources:
   - name: ecs-lb80test
     type: loadBalancer
     pointer:
-      sourceName: exampleLB
+      sourceName: EC2Contai-EcsElast-GPCOXIIKWPUJ

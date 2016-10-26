@@ -70,7 +70,7 @@ jobs:
       - IN: ecs-lb3000
         applyTo:
           - manifest: ecs-lbmani3000
-            image: lb-myapp3ecs
-            port: 80
+           # image: lb-myapp2ecs
+          #  port: 3000
       - TASK: managed
         deployMethod: replace

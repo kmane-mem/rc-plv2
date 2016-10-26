@@ -1,11 +1,11 @@
 jobs:
-  - name: rc-man1
+  - name: dep-man1
     type: manifest
     steps:
       - IN: rc-img1
       - IN: rc-tg1
 
-  - name: rc-ddcdeploy
+  - name: dep-ddcdeploy
     type: deploy
     steps:
       - IN: rc-man1

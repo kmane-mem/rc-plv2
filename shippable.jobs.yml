@@ -54,7 +54,7 @@ jobs:
     steps:
       - IN: ecs-lbmani80
       - IN: lb-ecscluster
-      - IN: ecs-lb80
+      - IN: ecs-lb80test
         applyTo:
           - manifest: ecs-lbmani80
             image: lb-myapp3ecs
@@ -67,7 +67,7 @@ jobs:
     steps:
       - IN: ecs-lbmani3000
       - IN: lb-ecscluster
-      - IN: ecs-lb80test
+      - IN: ecs-lb3000
         applyTo:
           - manifest: ecs-lbmani3000
             image: lb-myapp2ecs

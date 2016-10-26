@@ -88,5 +88,5 @@ jobs:
     on_failure:
       - NOTIFY: dep-slacktest
       - NOTIFY: dep-emailtest
-      - script: echo 'failure'
+      - script: echo 'fail'
       

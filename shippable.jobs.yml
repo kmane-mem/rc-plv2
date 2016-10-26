@@ -47,7 +47,7 @@ jobs:
     type: manifest
     steps:
       - IN: lb-myapp2ecs
-      - IN: lb-ecsdopts3000
+      #- IN: lb-ecsdopts3000
       
   - name: lb-ecsdeploy80
     type: deploy

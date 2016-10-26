@@ -24,7 +24,7 @@ resources:
       
   - name: lb-myapp3ecs
     type: image
-    integration: scriptnull-docker
+    integration: plv2-docker
     pointer:
       sourceName: "scriptnull/sample_node"
       isPull: true
@@ -33,7 +33,7 @@ resources:
 
   - name: lb-myapp2ecs
     type: image
-    integration: scriptnull-docker
+    integration: plv2-docker
     pointer:
       sourceName: "scriptnull/sample_node"
       isPull: true
@@ -81,4 +81,8 @@ resources:
     type: loadBalancer
     pointer:
       sourceName: exampleLB
-      
+  
+  - name: ecs-lb80test
+    type: loadBalancer
+    pointer:
+      sourceName: exampleLB

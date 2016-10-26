@@ -18,9 +18,9 @@ resources:
   - name: ecs-dopts
     type: dockerOptions
     version:
-      memory: 90
-      links:
-        - "plv2-manifest8redis_0_0_055d5014-109c-4c84-9bbe-3009a523:testenv"
+      memory: 80
+      #links:
+       # - "plv2-manifest8redis_0_0_055d5014-109c-4c84-9bbe-3009a523:testenv" #invalid link for rp, bg n up all 3
       
   - name: ecs-params1
     type: params

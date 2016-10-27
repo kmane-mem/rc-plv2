@@ -97,7 +97,7 @@ jobs:
       - IN: depall-version
         #versionName: testrelease
       - IN: dep-ddcdeploytest
-      - IN: dep-ecsdeploytest
+     # - IN: dep-ecsdeploytest
       - IN: dep-dcldeploytest
       - IN: dep-gkedeploytest
       - IN: dep-tpdeploytest

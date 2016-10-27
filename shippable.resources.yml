@@ -74,3 +74,8 @@ resources:
       versionName: "driftking"
     flags: #this for UI SPOG page there is filters 
       - rc-img5workingdir
+  
+  - name: testscale
+    type: replicas
+    version:
+      count: 2

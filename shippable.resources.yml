@@ -85,7 +85,7 @@ resources:
   - name: extdopt-ecs1
     type: dockerOptions
     version:
-      memory: 100
+      memory: 64
       cpuShares: 0
       privileged: false
       volumes:
@@ -121,6 +121,7 @@ resources:
   - name: extdopt-ecs2
     type: dockerOptions
     version:
+      memory: 64
       links:
         - "rc-img1"
       volumesFrom:

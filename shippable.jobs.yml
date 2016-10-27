@@ -76,3 +76,65 @@ jobs:
             port: 3000
       - TASK: managed
         deployMethod: replace
+      
+  - name: extdopt-manifest2
+    type: manifest
+    steps:
+      - IN: rc-image7workingdir
+      - IN: extdopt-ecs2     
+
+  - name: extdopt-manifest3entrypt
+    type: manifest
+    steps:
+      - IN: rc-image6entrypoint
+            
+  - name: upextdopt-ecsdeploywdir1
+    type: deploy
+    steps:
+      - IN: extdopt-manifest2
+      - IN: ecs-scale2
+      - IN: rc-ecscluster
+      - TASK: managed
+        deployMethod: upgrade
+        
+  - name: upextdopt-ecsdeployept
+    type: deploy
+    steps:
+      - IN: extdopt-manifest3entrypt
+      - IN: extdopt-ecs1
+      - IN: rc-ecscluster
+      - TASK: managed
+        deployMethod: upgrade
+        
+  - name: rpextdopt-ecsdeploywdir1
+    type: deploy
+    steps:
+      - IN: extdopt-manifest2
+      - IN: ecs-scale2
+      - IN: rc-ecscluster
+      - TASK: managed
+        deployMethod: replace
+        
+  - name: rpextdopt-ecsdeployept
+    type: deploy
+    steps:
+      - IN: extdopt-manifest3entrypt
+      - IN: extdopt-ecs1
+      - IN: rc-ecscluster
+      - TASK: managed
+        deployMethod: replace
+        
+  - name: bgextdopt-ecsdeploywdir1
+    type: deploy
+    steps:
+      - IN: extdopt-manifest2
+      - IN: ecs-scale2
+      - IN: rc-ecscluster
+        
+  - name: bgextdopt-ecsdeployept
+    type: deploy
+    steps:
+      - IN: extdopt-manifest3entrypt
+      - IN: extdopt-ecs1
+      - IN: rc-ecscluster
+        

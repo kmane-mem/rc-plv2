@@ -1,47 +1,5 @@
 resources:
-
-  - name: rc-ddccluster
-    type: cluster
-    integration: plv2-ddc
-    pointer:
-      sourceName : "nothing" #we can anything because it is mandatory but ddc doesnot have clusters
-
-  - name: rc-dclcluster
-    type: cluster
-    integration: plv2-dcl
-    pointer:
-     sourceName : "cluster-dcl"
-
-  - name: rc-ecscluster
-    type: cluster
-    integration: plv2-ecs
-    pointer:
-      sourceName : "testCL"
-      region: "us-west-2"
-      
-  - name: rc-gkecluster
-    type: cluster
-    integration: plv2-gke
-    pointer:
-      sourceName: "small-cluster" #name of the cluster we are deploying.
-      region: "us-east1-d"
-      
-  - name: rc-tripubcluster
-    type: cluster
-    integration: plv2-tripub
-    pointer:
-      sourceName: "default" # we can give anything it deploy instances based on region not by cluster name
-      region: "us-east-2"
-      
-  - name: testimg
-    type: image
-    integration: plv2-docker
-    pointer:
-      sourceName: shippabledocker/sample_node_pvt     
-    seed:
-      versionName: latest
-      
-  - name: rc-img1
+  - name: img1-rs
     type: image
     integration: plv2-docker
     pointer:
@@ -49,49 +7,9 @@ resources:
     seed:
       versionName: "deploy.1"
       
-  - name: rc-img2
-    type: image
-    integration: plv2-docker
+  - name: sample-script-rs
+    type: gitRepo
+    integration: "github"
     pointer:
-      sourceName: "shippabledocker/pipelinev2"
-    seed:
-      versionName: "deploy.2"
-      
-  - name: rc-image6entrypoint
-    type: image
-    integration: plv2-docker
-    pointer:
-      sourceName: "scriptnull/debian"
-    seed:
-      versionName: "entrypoint"
-  
-  - name: rc-image7workingdir
-    type: image
-    integration: plv2-docker
-    pointer:
-      sourceName: "scriptnull/debian"
-    seed:
-      versionName: "driftking"
-    flags: #this for UI SPOG page there is filters 
-      - rc-img5workingdir
-  
-  - name: rc-scale
-    type: replicas
-    version:
-      count: 1
-      
-  - name: ci-img1et
-    type: image
-    integration: plv2-docker
-    pointer:
-      sourceName: "shippabledocker/pipelinev2"
-    seed:
-      versionName: "deploy.1"
-      
-  - name: ci-img2et
-    type: image
-    integration: plv2-docker
-    pointer:
-      sourceName: "shippabledocker/pipelinev2"
-    seed:
-      versionName: "deploy.2"
+      sourceName: "shiphitchcock1/sample-script"
+      branch: "master"

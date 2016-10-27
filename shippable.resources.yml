@@ -77,5 +77,5 @@ resources:
   
   - name: testscale
     type: replicas
-    version:
-     # count: 1
+   # version:
+      count: 1

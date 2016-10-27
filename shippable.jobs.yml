@@ -10,4 +10,5 @@ jobs:
     steps:
       - IN: rc-man1
       - IN: rc-img2
+      - IN: testscale
       - IN: rc-tripubcluster

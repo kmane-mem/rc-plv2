@@ -82,7 +82,7 @@ resources:
     pointer:
       sourceName: exampleLB
       
-  - name: extdoptecs-dopts1
+  - name: extdopt-ecs1
     type: dockerOptions
     version:
       memory: 100
@@ -118,7 +118,7 @@ resources:
         - './entrypoint2.sh'
       readOnlyRootFilesystem : true
        
-  - name: extdoptecs-dopts2
+  - name: extdopt-ecs2
     type: dockerOptions
     version:
       links:
@@ -135,5 +135,3 @@ resources:
         options:
           max-size: 50m
       network : "bridge"
-
-

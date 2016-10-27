@@ -22,3 +22,8 @@ resources:
     type: version
     seed:
       versionName: "1.0.0-rc"
+
+  - name: dep-dopts
+    type: dockerOptions
+    version:
+      memory: 60

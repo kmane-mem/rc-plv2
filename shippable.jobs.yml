@@ -20,7 +20,7 @@ jobs:
     steps:
       - IN: gke-man1
       #-IN: gke-scale3 #check override
-      - IN: gkecluster
+      - IN: gkeclustertest
       - TASK: managed
         deployMethod: upgrade
       
@@ -29,14 +29,14 @@ jobs:
     steps:
       - IN: gke-man1
       #-IN: gke-scale3 #check override
-      - IN: gkecluster
+      - IN: gkeclustertest
    
   - name: rp-gke1
     type: deploy
     steps:
       - IN: gke-man1
       #-IN: gke-scale3 #check override
-      - IN: gkecluster
+      - IN: gkeclustertest
       - TASK: managed
         deployMethod: replace  
         

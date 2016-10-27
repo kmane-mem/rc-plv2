@@ -1,5 +1,5 @@
 triggers:
-   - name: ecs-tg1
+   - name: gke-tg1
      type: trigger
      version:
        counter: 0

@@ -78,4 +78,4 @@ resources:
   - name: testscale
     type: replicas
     version:
-      count: 2
+      count: xyz

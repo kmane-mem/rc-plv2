@@ -5,9 +5,9 @@ jobs:
       - IN: rc-img1
       - IN: rc-tg1
 
-  - name: rc-ddcdeploy
+  - name: tpdeploy-27octrc
     type: deploy
     steps:
       - IN: rc-man1
       - IN: rc-img2
-      - IN: rc-ddccluster
+      - IN: rc-tripubcluster

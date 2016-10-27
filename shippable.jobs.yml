@@ -35,7 +35,7 @@ jobs:
     type: deploy
     steps:
       - IN: gke-man1
-      #-IN: gke-scale3 #check override
+      - IN: gke-scale3 #check override
       - IN: gkecluster
       - TASK: managed
         deployMethod: replace  

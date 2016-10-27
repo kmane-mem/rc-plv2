@@ -3,6 +3,7 @@ jobs:
     type: manifest
     steps:
       - IN: rc-img1
+      - IN: dep-dopts
       - IN: rc-tg1
 
   - name: dep-ddcdeploytest

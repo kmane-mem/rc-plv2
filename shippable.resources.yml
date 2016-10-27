@@ -18,8 +18,8 @@ resources:
   - name: gke-dopts
     type: dockerOptions
     version:
-      memory: 80
-      user: testerror        
+      memory: 64
+    #  user: testerror      #this ll make GKE deploy job fail bcoz in GKE user should be 0 or some binary number  
       
   - name: gke-dopts80
     type: dockerOptions

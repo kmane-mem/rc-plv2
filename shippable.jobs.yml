@@ -1,78 +1,43 @@
 jobs:
-  - name: ecs-man2
-    type: manifest
-    steps:
-      - IN: rc-img2
+  #- name: gke-man2
+   # type: manifest
+    #steps:
+     # - IN: rc-img2
       
-  - name: ecs-man1
+  - name: gke-man1
     type: manifest
     steps:
       ##- IN: ecs-man2
-      - IN: rc-img1
-      - IN: ecs-dopts
-      - IN: ecs-params1
-        applyTo:
-          - ecs-img
-      ##- IN: ecs-scale2
-      - IN: ecs-img
-      - IN: rc-tg1
+      - IN: gke-img
+      ##- IN: rc-img1
+     # - IN: gke-dopts     
+     # - IN: gke-params1
+     # - IN: gke-scale2
+      - IN: gke-tg1
 
-  - name: up-ecs
+  - name: up-gke
     type: deploy
     steps:
-      - IN: ecs-man1
-      - IN: ecscluster
+      - IN: gke-man1
+      #-IN: gke-scale3 #check override
+      - IN: gkecluster
       - TASK: managed
         deployMethod: upgrade
       
-  - name: bg-ecs
+  - name: bg-gke
     type: deploy
     steps:
-      - IN: ecs-man1
-      - IN: ecscluster
+      - IN: gke-man1
+      #-IN: gke-scale3 #check override
+      - IN: gkecluster
    
   - name: rp-ecs
     type: deploy
     steps:
-      - IN: ecs-man1
-      - IN: ecscluster
+      - IN: gke-man1
+      #-IN: gke-scale3 #check override
+      - IN: gkecluster
       - TASK: managed
         deployMethod: replace  
         
-  - name: ecs-lbmani80
-    type: manifest
-    steps:
-      - IN: lb-myapp3ecs
-      - IN: lb-ecsdopts80
-      
-  - name: ecs-lbmani3000
-    type: manifest
-    steps:
-      - IN: lb-myapp2ecs
-      - IN: lb-ecsdopts3000
-      
-  - name: lb-ecsdeploy80
-    type: deploy
-    steps:
-      - IN: ecs-lbmani80
-      - IN: lb-ecscluster
-      - IN: ecs-lb80
-        applyTo:
-          - manifest: ecs-lbmani80
-            image: lb-myapp3ecs
-            port: 8080:80
-      - TASK: managed
-        deployMethod: replace
-     
-  - name: lb-ecsdeploy3000rp
-    type: deploy
-    steps:
-      - IN: ecs-lbmani3000
-      - IN: lb-ecscluster
-      - IN: ecs-lb3000
-        applyTo:
-          - manifest: ecs-lbmani3000
-            image: lb-myapp2ecs
-            port: 3000
-      - TASK: managed
-        deployMethod: replace
+ 

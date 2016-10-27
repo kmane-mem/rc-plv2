@@ -1,15 +1,15 @@
 jobs:
-  - name: gke-man2
-    type: manifest
-    steps:
-      - IN: rc-img2
+ # - name: gke-man2
+  #  type: manifest
+  #  steps:
+     # - IN: rc-img2
       
   - name: gke-man1
     type: manifest
     steps:
-      - IN: gke-man2
+    #  #- IN: gke-man2
       - IN: gke-img
-   #   - IN: rc-img1
+   #   #- IN: rc-img1
       - IN: gke-dopts     
       - IN: gke-params1
      # - IN: gke-scale2
@@ -20,7 +20,7 @@ jobs:
     steps:
       - IN: gke-man1
       #-IN: gke-scale3 #check override
-      - IN: gkeclustertest
+      - IN: gkecluster
       - TASK: managed
         deployMethod: upgrade
       
@@ -29,14 +29,14 @@ jobs:
     steps:
       - IN: gke-man1
       #-IN: gke-scale3 #check override
-      - IN: gkeclustertest
+      - IN: gkecluster
    
   - name: rp-gke1
     type: deploy
     steps:
       - IN: gke-man1
       #-IN: gke-scale3 #check override
-      - IN: gkeclustertest
+      - IN: gkecluster
       - TASK: managed
         deployMethod: replace  
         

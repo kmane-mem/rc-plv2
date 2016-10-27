@@ -42,10 +42,10 @@ resources:
         - '/bin/sh'
         - './entrypoint2.sh'
       links:
-        - "extdopt-manifest4driftking_0_0_7419af75-c48b-4cc5-b4b7-4c7ebeff9236:testenv"
+        - "extdopt-manifest4driftking_0_0_cb565298-2845-4d54-9e51-533936d6bf71:testenv"
       volumesFrom:
-          - "extdopt-manifest4driftking_0_0_7419af75-c48b-4cc5-b4b7-4c7ebeff9236"
-          - "basedataContainer:ro" # this wont accept only one volumeForm will be considered
+        - "extdopt-manifest4driftking_0_0_cb565298-2845-4d54-9e51-533936d6bf71"
+        - "basedataContainer:ro" # this wont accept only one volumeForm will be considered
        
   - name: extdoptgke-dopts3
     type: dockerOptions

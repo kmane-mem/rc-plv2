@@ -86,7 +86,7 @@ resources:
     type: dockerOptions
     version:
       memory: 64
-      cpuShares: 0
+      cpuShares: 1
       privileged: false
       volumes:
       #  - "/host/path.2:/container/path:rw"

@@ -90,3 +90,19 @@ jobs:
       - NOTIFY: dep-emailtest
       - script: echo 'fail'
       
+  - name: alldeploy-release
+    type: release
+    steps:
+      - IN: depall-version
+        #versionName: testrelease
+      - IN: dep-ddcdeploytest
+      - IN: dep-ecsdeploytest
+      - IN: dep-dcldeploytest
+      - IN: dep-gkedeploytest
+      - IN: dep-tpdeploytest
+  #    - IN: timedailyprod-release
+      - TASK: managed
+        bump: rc
+    flags:
+      - deployall-notification
+      

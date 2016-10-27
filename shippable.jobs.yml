@@ -9,4 +9,5 @@ jobs:
     type: deploy
     steps:
       - IN: rc-man1
+      - IN: rc-img2
       - IN: rc-ddccluster

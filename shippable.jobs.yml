@@ -9,7 +9,7 @@ jobs:
     steps:
       ##- IN: ecs-man2
       - IN: gke-img
-      ##- IN: rc-img1
+      - IN: rc-img1
       - IN: gke-dopts     
       - IN: gke-params1
      # - IN: gke-scale2

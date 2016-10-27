@@ -17,3 +17,8 @@ resources:
       recipients: 
         - "varsha@shippable.com"
         - "shiphitchcock1@gmail.com"
+        
+  - name: depall-version
+    type: version
+    seed:
+      versionName: "1.0.0-rc"

@@ -76,6 +76,6 @@ resources:
       - rc-img5workingdir
   
   - name: testscale
-    type: replicastest
+    type: replicas
     version:
-      count: 1
+     # count: 1

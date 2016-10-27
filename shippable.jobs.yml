@@ -12,7 +12,7 @@ jobs:
    #   #- IN: rc-img1
       - IN: gke-dopts     
       - IN: gke-params1
-     # - IN: gke-scale2
+      - IN: gke-scale2
       - IN: gke-tg1
 
   - name: up-gke1

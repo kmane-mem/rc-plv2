@@ -75,7 +75,7 @@ resources:
     flags: #this for UI SPOG page there is filters 
       - rc-img5workingdir
   
-  - name: testscale
+  - name: rc-scale
     type: replicas
-   # version:
+    version:
       count: 1

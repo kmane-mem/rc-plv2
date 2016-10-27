@@ -15,7 +15,7 @@ jobs:
      # - IN: gke-scale2
       - IN: gke-tg1
 
-  - name: up-gke1
+  - name: up-gke
     type: deploy
     steps:
       - IN: gke-man1
@@ -24,14 +24,14 @@ jobs:
       - TASK: managed
         deployMethod: upgrade
       
-  - name: bg-gke1
+  - name: bg-gke
     type: deploy
     steps:
       - IN: gke-man1
     ##  - IN: gke-scale3 #check override
       - IN: gkecluster
    
-  - name: rp-gke1
+  - name: rp-gke
     type: deploy
     steps:
       - IN: gke-man1

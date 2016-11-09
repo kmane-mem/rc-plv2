@@ -14,6 +14,6 @@ jobs:
   - name: tpdeploy-27octrc
     type: deploy
     steps:
-      - IN: rc-man2
+      - IN: rc-man1
       - IN: rc-img2
       - IN: rc-tripubcluster

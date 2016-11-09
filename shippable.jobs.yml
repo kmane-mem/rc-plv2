@@ -47,6 +47,7 @@ jobs:
   - name: ar-ddcdeploy
     type: deploy
     steps:
+      - IN: ar-ddccluster
       - IN: ar-manifest1
        # switch: off
       - IN: ar-params

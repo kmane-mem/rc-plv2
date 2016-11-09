@@ -5,16 +5,15 @@ jobs:
       - IN: rc-img1
       - IN: rc-tg1
 
-  - name: ci-man1
+  - name: ci-man2
     type: manifest
     steps:
       - IN: ci-img1et
       - IN: ci-img2et
-      - IN: rc-image6entrypoint
 
   - name: tpdeploy-27octrc
     type: deploy
     steps:
-      - IN: rc-man1
+      - IN: rc-man2
       - IN: rc-img2
       - IN: rc-tripubcluster

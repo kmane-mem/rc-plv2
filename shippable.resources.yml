@@ -1,97 +1,132 @@
-resources:
+#IMAGES
 
-  - name: rc-ddccluster
+resources:
+  - name: allpl-image1
+    type: image
+    integration: ship-docker
+    pointer:
+      sourceName: "shippabledocker/pipelinev2"
+    seed:
+      versionName: "deploy.1"
+  
+  - name: allpl-image2invalidimg
+    type: image
+    integration: ship-docker
+    pointer:
+      sourceName: "shiphitchcock1/betaci"
+    seed:
+      versionName: "latest"
+      
+  - name: allpl-image3invalidtag
+    type: image
+    integration: ship-docker
+    pointer:
+      sourceName: "shiphitchcock1/pipelinev2"
+    seed:
+      versionName: "test13sep"
+      
+  - name: allpl-image4invalidformat
+    type: image
+    integration: ship-docker
+    pointer:
+      sourceName: "shiphitchcock1/pipelinev2"
+    seed:
+      versionName: "test 13sep"
+      
+#CLUSTERS
+  
+  - name: ar-ddccluster
     type: cluster
-    integration: plv2-ddc
+    integration: ship-ddc
     pointer:
       sourceName : "nothing" #we can anything because it is mandatory but ddc doesnot have clusters
+      
+#LOAD BALANCER
+  - name: ar-lb
+    type: loadBalancer
+    pointer:
+      sourceName: 
+      
+#VERSIONS
 
-  - name: rc-dclcluster
-    type: cluster
-    integration: plv2-dcl
+  - name: ar-version
+    type: version
+    seed:
+      versionName: "1.2.123-rc"
+      
+#NOTIFICATIONS
+      
+  - name: ar-slack
+    type: notification
+    integration: "ship-slackplv2"
     pointer:
-     sourceName : "cluster-dcl"
+      recipients:
+        - "#pipeline-pvt"
+        - "#pipeline-public"
+        - "@shiphitchcock1"
 
-  - name: rc-ecscluster
-    type: cluster
-    integration: plv2-ecs
+  - name: ar-email
+    type: notification
     pointer:
-      sourceName : "testCL"
-      region: "us-west-2"
-      
-  - name: rc-gkecluster
-    type: cluster
-    integration: plv2-gke
-    pointer:
-      sourceName: "small-cluster" #name of the cluster we are deploying.
-      region: "us-east1-d"
-      
-  - name: rc-tripubcluster
-    type: cluster
-    integration: plv2-tripub
-    pointer:
-      sourceName: "default" # we can give anything it deploy instances based on region not by cluster name
-      region: "us-east-2"
-      
-  - name: testimg
-    type: image
-    integration: plv2-docker
-    pointer:
-      sourceName: shippabledocker/sample_node_pvt     
-    seed:
-      versionName: latest
-      
-  - name: rc-img1
-    type: image
-    integration: plv2-docker
-    pointer:
-      sourceName: "shippabledocker/pipelinev2"
-    seed:
-      versionName: "deploy.1"
-      
-  - name: rc-img2
-    type: image
-    integration: plv2-docker
-    pointer:
-      sourceName: "shippabledocker/pipelinev2"
-    seed:
-      versionName: "deploy.2"
-      
-  - name: rc-image6entrypoint
-    type: image
-    integration: plv2-docker
-    pointer:
-      sourceName: "scriptnull/debian"
-    seed:
-      versionName: "entrypoint"
+      method: email
+      recipients: 
+        - "varsha@shippable.com"
+        - "shiphitchcock1@gmail.com"
+        
+#INTEGRATION
+
+  - name: ar-dockerintegration
+    type: integration
+    integration: "ship-docker"
+        
+# DOCKER OPTIONS:
+
+  - name: ar-dopts
+    type: dockerOptions
+    version:
+      memory: 100
   
-  - name: rc-image7workingdir
-    type: image
-    integration: plv2-docker
-    pointer:
-      sourceName: "scriptnull/debian"
-    seed:
-      versionName: "driftking"
-    flags: #this for UI SPOG page there is filters 
-      - rc-img5workingdir
-  
-  - name: rc-scale
+  - name: ar-dopts2invalid
+    type: dockerOptions
+    version:
+      links:
+        - "plv2-manifest8redis_0_0_055d5014-109c-4c84-9bbe-3009a523:testenv"
+        
+#PARAMS
+
+  - name: ar-params
+    type: params
+    version:
+      params:
+        foo: bar
+        #secure: Xuq1cwGOn1lR1UTMfcwhdPUhJJXr0FeeG/M0/l4v7HFcjIRdrML13//R4RbMWxIeUtmdRWT1y3HRgQSqsRbYRIYF/6rTYH3/eazkowA2hHPZpT8vNfr3tFZJwQeSTf0qGtZOMO1iOacgaFOBgAdBCheJA8tN3ARHapUWk5bxuj7CpIq/LNWEbR/TcNNWaZJkyoWeK6/4U61xNPbVgyL1e73m3WmHPcGwpgTyxW+T1jqgh5m99D3p87UrfTeS6ss5YNA8lkZmFpdYZrq2LIKBMSJuq46Vj1VwRrtRGXYN2eYzmyDvpevciShm6Ai8w8o18eY6dwKrch8PSNloCVDHDA== 
+        DB_HOST: "ds015700.mlab.com"
+        DB_NAME: "ayeaye"
+        DB_PORT: "15700"
+        DB_USERNAME: "aye0aye"
+        DB_PASSWORD: "aye0aye"
+        ENVIRONMENT: "test-aws"
+        
+#REPLICAS
+      
+  - name: ar-replica2
     type: replicas
     version:
-      count: 1
+      count: 2
       
-  - name: ci-img1et
-    type: image
-    integration: plv2-docker
-    pointer:
-      sourceName: "shippabledocker/pipelinev2"
+#TIME
+
+  - name: ar-testtime
+    type: time
     seed:
-      versionName: "deploy.1"
+      interval: "*/9 * 9 9 *"
+
       
-  - name: ci-img2et
-    type: image
-    integration: plv2-docker
+#GITREPO:
+
+  - name: ar-samplescript
+    type: gitRepo
+    integration: "github"
     pointer:
-      sourceName: "shippabledocker/pipelinev2"
-    seed:
-      versionName: "deploy.2"
+      sourceName: "shiphitchcock1/sample-script"
+      branch: "master"

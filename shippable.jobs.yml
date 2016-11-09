@@ -1,5 +1,5 @@
 jobs:
-  - name: rc-man1
+  - name: rc-man2
     type: manifest
     steps:
       - IN: rc-img1

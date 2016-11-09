@@ -1,7 +1,7 @@
 #IMAGES
 
 resources:
-  - name: allpl-image1
+  - name: ar-image1
     type: image
     integration: ship-docker
     pointer:
@@ -9,7 +9,7 @@ resources:
     seed:
       versionName: "deploy.1"
   
-  - name: allpl-image2invalidimg
+  - name: ar-image2invalidimg
     type: image
     integration: ship-docker
     pointer:
@@ -17,7 +17,7 @@ resources:
     seed:
       versionName: "latest"
       
-  - name: allpl-image3invalidtag
+  - name: ar-image3invalidtag
     type: image
     integration: ship-docker
     pointer:
@@ -25,13 +25,13 @@ resources:
     seed:
       versionName: "test13sep"
       
-  - name: allpl-image4invalidformat
+  - name: ar-image4invalidformat
     type: image
     integration: ship-docker
     pointer:
       sourceName: "shiphitchcock1/pipelinev2"
     seed:
-      versionName: "test 13sep"
+      versionName: "test 09nov"
       
 #CLUSTERS
   

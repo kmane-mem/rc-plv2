@@ -1,5 +1,15 @@
 triggers:
-   - name: rc-tg1
+   - name: ar-tg1
+     type: trigger
+     version:
+       counter: 0
+       
+   - name: ar-tg2
+     type: trigger
+     version:
+       counter: 0
+       
+   - name: ar-tg3
      type: trigger
      version:
        counter: 0

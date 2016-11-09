@@ -1,5 +1,5 @@
 triggers:
-   - name: runsh-tg2
+   - name: runsh-tg1
      type: trigger
      version:
        counter: 0

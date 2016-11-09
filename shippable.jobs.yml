@@ -1,9 +1,9 @@
 jobs:
-  - name: rc-man1
-    type: manifest
-    steps:
-      - IN: rc-img1
-      - IN: rc-tg1
+ # - name: rc-man1
+ #   type: manifest
+ #   steps:
+    #  - IN: rc-img1
+    #  - IN: rc-tg1
 
   - name: ci-man2
     type: manifest

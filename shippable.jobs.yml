@@ -44,17 +44,17 @@ jobs:
        - NOTIFY: ar-email
        - NOTIFY: ar-slack
   
-  - name: ar-ddcdeploy
-    type: deploy
-    steps:
-      - IN: ar-ddccluster
-      - IN: ar-manifest1
+   - name: ar-ddcdeploy
+     type: deploy
+     steps:
+       - IN: ar-ddccluster
+       - IN: ar-manifest1
        # switch: off
-      - IN: ar-params
-      - IN: ar-dopts
-      - IN: ar-replica2
+       - IN: ar-params
+       - IN: ar-dopts
+       - IN: ar-replica2
         #versionNumber: 1000      
-    on_start:
+     on_start:
        - NOTIFY: ar-email
        - NOTIFY: ar-slack
        #- NOTIFY: allpl-irc
@@ -66,28 +66,28 @@ jobs:
        - NOTIFY: ar-email
        - NOTIFY: ar-slack
       
-  - name: ar-inrunSh
-    type: runSh
-    steps:
-      - IN: ar-samplescript
+   - name: ar-inrunSh
+     type: runSh
+     steps:
+       - IN: ar-samplescript
       # versionName: testsha
-      - IN: allplar-image3invalidtag-tg2
+       - IN: allplar-image3invalidtag-tg2
       #- IN: test-time-1
-      - TASK:
-        - script: ls
-        - script: ./IN/allpl-sample-script/gitRepo/echo.sh
-      - OUT: ar-image3invalidtag
-    on_start:
-      - NOTIFY: allpl-slack
-      - NOTIFY: allpl-email
-    on_success:
-      - NOTIFY: allpl-slack
-      - NOTIFY: allpl-email
-      - script: echo 'infra test'
-      - script: echo 'newtesting success'
-    on_failure:
-      - script: echo 'testing1 failure'
-      - script: echo 'failure runSh'
-      - NOTIFY: allpl-slack
-      - NOTIFY: allpl-email
+       - TASK:
+         - script: ls
+         - script: ./IN/allpl-sample-script/gitRepo/echo.sh
+       - OUT: ar-image3invalidtag
+     on_start:
+       - NOTIFY: allpl-slack
+       - NOTIFY: allpl-email
+     on_success:
+       - NOTIFY: allpl-slack
+       - NOTIFY: allpl-email
+       - script: echo 'infra test'
+       - script: echo 'newtesting success'
+     on_failure:
+       - script: echo 'testing1 failure'
+       - script: echo 'failure runSh'
+       - NOTIFY: allpl-slack
+       - NOTIFY: allpl-email
       

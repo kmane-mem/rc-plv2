@@ -58,7 +58,7 @@ resources:
       
   - name: ar-slack
     type: notification
-    integration: "plv2-slackplv2"
+    integration: "plv2-slack"
     pointer:
       recipients:
         - "#pipeline-pvt"

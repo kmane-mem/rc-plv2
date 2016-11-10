@@ -8,7 +8,7 @@ jobs:
   - name: ci-man2
     type: manifest
     steps:
-      - IN: ci-img1et
+      - IN: ci-img1etest
    #   - IN: ci-img2et
 
   - name: tpdeploy-27octrc

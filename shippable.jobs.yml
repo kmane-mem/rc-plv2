@@ -32,6 +32,8 @@ jobs:
      steps:
        - IN: ar-image1
        # versionNumber: 100
+       - IN: ar-image2invalidimg
+       - OUT: ar-image4invalidformat
        - IN: ar-tg1
      on_start:
        - NOTIFY: ar-email
@@ -44,13 +46,20 @@ jobs:
      on_failure:
        - NOTIFY: ar-email
        - NOTIFY: ar-slack
+       
+   - name: ar-manifest2
+     type: manifest
+     steps:
+       - IN: ar-image4invalidformat
+       - IN: ar-image1
+       - IN: ar-image2invalidimg
   
    - name: ar-ddcdeploy
      type: deploy
      steps:
        - IN: ar-ddccluster
        - IN: ar-manifest1
-       # switch: off
+         switch: off
        - IN: ar-params
        - IN: ar-dopts
        - IN: ar-replica2

@@ -7,6 +7,7 @@ jobs:
      steps:
        - IN: ar-version
          #versionName: testrelease
+       - IN: ar-inrunSh
        - TASK: managed
          bump: rc
        #- IN: ar-tg3

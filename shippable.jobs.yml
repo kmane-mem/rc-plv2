@@ -26,13 +26,13 @@ jobs:
       
 #MANIFESTS
       
-  - name: ar-manifest1
-    type: manifest
-    steps:
-      - IN: ar-image1
+   - name: ar-manifest1
+     type: manifest
+     steps:
+       - IN: ar-image1
        # versionNumber: 100
-      - IN: ar-tg1
-    on_start:
+       - IN: ar-tg1
+     on_start:
        - NOTIFY: ar-email
        - NOTIFY: ar-slack
        #- NOTIFY: allpl-irc

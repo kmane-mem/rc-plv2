@@ -76,7 +76,6 @@ jobs:
        - TASK:
          - script: ls
          - script: ./IN/allpl-sample-script/gitRepo/echo.sh
-       - OUT: ar-image3invalidtag
      on_start:
        - NOTIFY: ar-slack
        - NOTIFY: ar-email

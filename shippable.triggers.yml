@@ -13,10 +13,3 @@ triggers:
      type: trigger
      version:
        counter: 0
-
-   - name: ar-release1tr
-     type: release
-     steps:
-       - IN: ar-version
-         #versionName: testrelease
-     #  - IN: ar-inrunSh

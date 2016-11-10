@@ -9,7 +9,7 @@ jobs:
     type: manifest
     steps:
       - IN: ci-img1et
-      - IN: ci-img2et
+   #   - IN: ci-img2et
 
   - name: tpdeploy-27octrc
     type: deploy

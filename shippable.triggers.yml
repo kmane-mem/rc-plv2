@@ -13,3 +13,17 @@ triggers:
      type: trigger
      version:
        counter: 0
+
+   - name: ar-manifest3tr
+     type: manifest
+     steps:
+       - IN: ar-image1
+       # versionNumber: 100
+       - IN: ar-tg1
+       
+   - name: ar-inrunSh2tr
+     type: runSh
+     steps:
+       - IN: ar-samplescript
+      # versionName: testsha
+       - IN: ar-image3invalidtag

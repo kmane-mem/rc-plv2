@@ -45,7 +45,7 @@ resources:
   - name: ar-lb
     type: loadBalancer
     pointer:
-      sourceName: 
+      sourceName: EC2Contai-EcsElast-GPCOXIIKWPUJ
       
 #VERSIONS
 

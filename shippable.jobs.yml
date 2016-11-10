@@ -71,23 +71,23 @@ jobs:
      steps:
        - IN: ar-samplescript
       # versionName: testsha
-       - IN: allplar-image3invalidtag-tg2
+       - IN: ar-image3invalidtag
       #- IN: test-time-1
        - TASK:
          - script: ls
          - script: ./IN/allpl-sample-script/gitRepo/echo.sh
        - OUT: ar-image3invalidtag
      on_start:
-       - NOTIFY: allpl-slack
-       - NOTIFY: allpl-email
+       - NOTIFY: ar-slack
+       - NOTIFY: ar-email
      on_success:
-       - NOTIFY: allpl-slack
-       - NOTIFY: allpl-email
+       - NOTIFY: ar-slack
+       - NOTIFY: ar-email
        - script: echo 'infra test'
        - script: echo 'newtesting success'
      on_failure:
        - script: echo 'testing1 failure'
        - script: echo 'failure runSh'
-       - NOTIFY: allpl-slack
-       - NOTIFY: allpl-email
+       - NOTIFY: ar-slack
+       - NOTIFY: ar-email
       

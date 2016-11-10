@@ -76,7 +76,7 @@ jobs:
       #- IN: test-time-1
        - TASK:
          - script: ls
-         - script: ./IN/allpl-sample-script/gitRepo/echo.sh
+         - script: ./IN/ar-samplescript/gitRepo/echo.sh
      on_start:
        - NOTIFY: ar-slack
        - NOTIFY: ar-email

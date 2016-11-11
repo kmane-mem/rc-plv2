@@ -9,7 +9,7 @@ resources:
       versionName: "deploy.3"
       
   - name: tripubcluster
-    type: cluster
+    type: clustertest
     integration: plv2-tripub
     pointer:
       sourceName: "default" #name of the cluster we are deploying.

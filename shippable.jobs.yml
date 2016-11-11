@@ -11,7 +11,7 @@ jobs:
       - IN: tp-img
    #   #- IN: rc-img1
       - IN: tp-dopts     
-     # - IN: tp-params1
+      - IN: tp-params1
      # - IN: gke-scale2
       - IN: tp-tg1
 

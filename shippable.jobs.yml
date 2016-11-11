@@ -9,7 +9,7 @@ jobs:
     steps:
     #  #- IN: gke-man2
       - IN: tp-img
-   #   #- IN: rc-img1
+      - IN: rc-img1
       - IN: tp-dopts     
       - IN: tp-params1
      # - IN: gke-scale2

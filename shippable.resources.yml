@@ -33,8 +33,9 @@ resources:
       params:
         MONGO_API_URL: "localhost:28017"
         TEST: rc
-        secure: OhqwZ4+PS+n6195VCkqCZKhpDvfrsLO2WrVHkWrV3MAU3vAbpTE2jh4fKy5h251Vc0GYB0OB6QHmhEQFKBGTlbQXP/dz8PpQisMmBtk2Jfim6v5DbDB1aFHBvRsiFoXSh+3syi6tO2RfPEHhRj0ZQOaRUNSn8QMPGIs2cBL6NpHAwF07Rai1xhpPD4RIekyODo5uaTQc7o6ZAzqx53YaH5gRAL1jxUPu4QJCJo5r8jPy9RHZ4vWpwD+I1qkQuL1898wF5S6q6jVAcG2KGVQQ3N/nuf9++ZoRK5y506OdBpab/ZWmz+VZYZE0l5TImkEWJXMnxgHGbFw0LZHyq15YRw==
-
+        secure: EPSRlZf8pFZr6+cBUdfPfdC4UFNxtNr5qHhsaZs7I78hnGclOl/9f4mJLBbWeLL4UJbIBg8fJcLxWZqkdy9XwZrPxJZ7PEoNhlE6lp9HiHTIf7cNJk4sLrxLovzrv5xmd2VQZIYhtfbdoRDVcopMHRWJOHwxLoj1gvXCPtO5yaRnyaBRcxBTQ5hlW2PHnUaISdV3dRJ5Nlw3AGPjB9OrJHyJBLzQOjYUk/T6Okubk9xBvk1I4C2oX/rYGZSFuuFQvkXvtxW4k5A9BdFAfhYL6PPOMK15lFrVjNOQqSO/tekTc0WWaVcqfDm2nZXmTcsBhyhwP8pb503FeGoWMnHT8Q==
+        #deploy=tp
+        
   - name: tp-scale2
     type: replicas
     version:

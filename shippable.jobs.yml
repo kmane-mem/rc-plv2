@@ -4,39 +4,39 @@ jobs:
   #  steps:
      # - IN: rc-img2
       
-  - name: gke-man1
+  - name: tp-man1
     type: manifest
     steps:
     #  #- IN: gke-man2
-      - IN: gke-img
+      - IN: tp-img
    #   #- IN: rc-img1
-      - IN: gke-dopts     
-      - IN: gke-params1
+    #  - IN: tp-dopts     
+     # - IN: tp-params1
      # - IN: gke-scale2
-      - IN: gke-tg1
+      - IN: tp-tg1
 
-  - name: up-gke
+  - name: up-tp
     type: deploy
     steps:
-      - IN: gke-man1
+      - IN: tp-man1
     ##  - IN: gke-scale3 #check override
-      - IN: gkecluster
+      - IN: tripubcluster
       - TASK: managed
         deployMethod: upgrade
       
-  - name: bg-gke
+  - name: bg-tp
     type: deploy
     steps:
-      - IN: gke-man1
+      - IN: tp-man1
     ##  - IN: gke-scale3 #check override
-      - IN: gkecluster
+      - IN: tripubcluster
    
-  - name: rp-gke
+  - name: rp-tp
     type: deploy
     steps:
-      - IN: gke-man1
+      - IN: tp-man1
     ##  - IN: gke-scale3 #check override
-      - IN: gkecluster
+      - IN: tripubcluster
       - TASK: managed
         deployMethod: replace  
         

@@ -1,6 +1,6 @@
 resources:
 
-  - name: gke-img
+  - name: tp-img
     type: image
     integration: plv2-docker
     pointer:
@@ -8,26 +8,26 @@ resources:
     seed:
       versionName: "deploy.3"
       
-  - name: gkecluster
+  - name: tripubcluster
     type: cluster
     integration: plv2-gke
     pointer:
-      sourceName: "small-cluster" #name of the cluster we are deploying.
-      region: "us-east1-d"
+      sourceName: "default" #name of the cluster we are deploying.
+      region: "us-east-2"
             
-  - name: gke-dopts
+  - name: tp-dopts
     type: dockerOptions
     version:
       memory: 64
     #  user: testerror      #this ll make GKE deploy job fail bcoz in GKE user should be 0 or some binary number  
       
-  - name: gke-dopts80
+  - name: tp-dopts80
     type: dockerOptions
     version:
       portMappings:
         - "8080:80"
        
-  - name: gke-params1
+  - name: tp-params1
     type: params
     version:
       params:
@@ -35,12 +35,12 @@ resources:
         TEST: rc
         secure: OhqwZ4+PS+n6195VCkqCZKhpDvfrsLO2WrVHkWrV3MAU3vAbpTE2jh4fKy5h251Vc0GYB0OB6QHmhEQFKBGTlbQXP/dz8PpQisMmBtk2Jfim6v5DbDB1aFHBvRsiFoXSh+3syi6tO2RfPEHhRj0ZQOaRUNSn8QMPGIs2cBL6NpHAwF07Rai1xhpPD4RIekyODo5uaTQc7o6ZAzqx53YaH5gRAL1jxUPu4QJCJo5r8jPy9RHZ4vWpwD+I1qkQuL1898wF5S6q6jVAcG2KGVQQ3N/nuf9++ZoRK5y506OdBpab/ZWmz+VZYZE0l5TImkEWJXMnxgHGbFw0LZHyq15YRw==
 
-  - name: gke-scale2
+  - name: tp-scale2
     type: replicas
     version:
       count: 2
 
-  - name: gke-scale3
+  - name: tp-scale3
     type: replicas
     version:
       count: 3

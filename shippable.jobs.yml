@@ -10,7 +10,7 @@ jobs:
     #  #- IN: gke-man2
       - IN: tp-img
    #   #- IN: rc-img1
-    #  - IN: tp-dopts     
+      - IN: tp-dopts     
      # - IN: tp-params1
      # - IN: gke-scale2
       - IN: tp-tg1

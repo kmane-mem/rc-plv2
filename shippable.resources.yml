@@ -10,7 +10,7 @@ resources:
       
   - name: tripubcluster
     type: cluster
-    integration: plv2-gke
+    integration: plv2-tripub
     pointer:
       sourceName: "default" #name of the cluster we are deploying.
       region: "us-east-2"

@@ -1,17 +1,17 @@
 jobs:
-  - name: tp-man2
-    type: manifest
-    steps:
-      - IN: rc-img2
+ # - name: tp-man2
+ #   type: manifest
+   # steps:
+    #  - IN: rc-img2
       
   - name: tp-man1
     type: manifest
     steps:
-      - IN: tp-man2
+     # - IN: tp-man2
       - IN: tp-img
      # - IN: rc-img1
       - IN: tp-dopts     
-      - IN: tp-params1
+    #  - IN: tp-params1
      # - IN: gke-scale2
       - IN: tp-tg1
 

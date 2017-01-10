@@ -1,7 +1,7 @@
 resources:
   - name: img1-rs
     type: image
-    integration: plv2-docker
+    integration: docker
     pointer:
       sourceName: "shippabledocker/pipelinev2"
     seed:
@@ -11,5 +11,5 @@ resources:
     type: gitRepo
     integration: "bitbucket-me"
     pointer:
-      sourceName: "shiphitchcock1/sample-script"
+      sourceName: "shiptest-rc-me/sample-script"
       branch: "master"

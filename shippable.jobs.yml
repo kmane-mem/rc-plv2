@@ -45,6 +45,7 @@ jobs:
     type: runSh
     steps:
       - IN: sample-script-rs
+      - OUT: rs-man1
        # versionName: testsha
       #- IN: rs-ddcdeployup
       - TASK:

@@ -9,7 +9,7 @@ resources:
       
   - name: sample-script-rs
     type: gitRepo
-    integration: "github"
+    integration: "bitbucket-me"
     pointer:
       sourceName: "shiphitchcock1/sample-script"
       branch: "master"

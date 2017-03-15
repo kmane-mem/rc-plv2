@@ -7,9 +7,9 @@ resources:
     seed:
       versionName: "deploy.1"
       
-  ##- name: sample-script-rs
-   # type: gitRepo
-   # integration: "github"
-   # pointer:
-   #   sourceName: "shiphitchcock1/sample-script"
-   #   branch: "master"
+  - name: sample-script-rs
+    type: gitRepo
+    integration: "bitbucket"
+    pointer:
+      sourceName: "shiptest-rc-me/sample-script"
+      branch: "master"

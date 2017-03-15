@@ -23,11 +23,11 @@ jobs:
     # on_success:
     #   - NOTIFY: slack-rs
       
-  - name: rs-ddcdeployup
-    type: deploy
-    steps:
-      - IN: rs-man1
-      - IN: rc-ddccluster
+ # - name: rs-ddcdeployup
+  #  type: deploy
+  #  steps:
+   #   - IN: rs-man1
+   #   - IN: rc-ddccluster
       
  # - name: rs-inrunsh
   #  type: runSh
@@ -46,7 +46,7 @@ jobs:
     steps:
       - IN: sample-script-rs
        # versionName: testsha
-      - IN: rs-ddcdeployup
+     # - IN: rs-ddcdeployup
       - TASK:
         - script: ls
         - script: ./IN/sample-script-rs/gitRepo/echo.sh

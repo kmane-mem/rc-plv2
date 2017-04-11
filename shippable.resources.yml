@@ -1,11 +1,11 @@
 resources:
-  #- name: img1-rs
-  #  type: image
-  #  integration: docker
-  #  pointer:
-  #    sourceName: "shippabledocker/pipelinev2"
-  #  seed:
-  #    versionName: "deploy.1"
+  - name: imgsh
+    type: image
+    integration: docker
+    pointer:
+      sourceName: "shippabledocker/pipelinev2"
+    seed:
+      versionName: "deploy.1"
       
   - name: myscript-repo
     type: gitRepo

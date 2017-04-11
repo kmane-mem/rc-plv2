@@ -1,6 +1,6 @@
 jobs:
 
-  - name: inrunsh
+  - name: inrunsh123
     type: runSh
     steps:
       - IN: myscript-repo

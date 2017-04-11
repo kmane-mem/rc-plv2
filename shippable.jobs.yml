@@ -14,5 +14,12 @@ jobs:
     on_failure:
       - script: echo 'testing1 failure'
       - script: echo 'failure runSh'
-      
+   
+  - name: testsh
+    type: runSh
+    steps:
+      - IN: myscript-repo
+      - IN: runsh-t1
+      - TASK:
+        - script: ls
  

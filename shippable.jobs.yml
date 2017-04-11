@@ -1,56 +1,13 @@
 jobs:
 
-#RELEASE
-
-  #- name: rs-release
-   # type: release
-    #steps:
-     # - IN: rs-version
-      #- TASK: managed
-       # bump: beta
-      #- IN: notify-man1cnrimg
-      #- IN: triggernotify7
-
-  - name: rs-man1
-    type: manifest
-    steps:
-      - IN: img1-rs
-      # - IN: "2img-rs"
-      # - IN: "redis-rs"
-      # - IN: "env-rs"
-      # - IN: version-rs
-      #- IN: rs-tg1
-    # on_success:
-    #   - NOTIFY: slack-rs
-      
- # - name: rs-ddcdeployup
-   # type: deploy
-   # steps:
-   #   - IN: rs-man1
-   #   - IN: rc-ddccluster
-      
- # - name: rs-inrunsh
-  #  type: runSh
-   # steps:
-    #  - IN: rs-sample-script
-     # - IN: rs-tg2
-      #- TASK:
-       # - script: ls
-        #- script: ./IN/rs-sample-script/rs-sample-script/echo.sh
-      #- on_success:
-       # - echo 'This block executes after TASK section executes successfully'
-        #- NOTIFY: rs-slack
-        
   - name: inrunsh
     type: runSh
     steps:
-      - IN: sample-script-rs
-      - OUT: rs-man1
-       # versionName: testsha
-      #- IN: rs-ddcdeployup
+      - IN: myscript-repo
+      - IN: runsh-t1
       - TASK:
         - script: ls
-        - script: ./IN/sample-script-rs/gitRepo/echo.sh
+        - script: ./IN/myscript-repo/gitRepo/echo.sh
     on_success:
       - script: echo 'infra test'
       - script: echo 'newtesting success'
@@ -58,18 +15,4 @@ jobs:
       - script: echo 'testing1 failure'
       - script: echo 'failure runSh'
       
-  # - name: outrunsh
-  #   type: runSh
-  #   steps:
-  #     - TASK:
-  #       - script: "mkdir -p /build/state/" # creating directory 
-  #       - script: "touch /build/state/img1-rs.env" # touch will create new empty file with timestamp
-  #       - script: "echo 'Hello'"
-  #     # - script: "echo 'versionName=latest' >>  /build/state/rs-img1.env" # this will be adding in the file mongo-image.env
-  #       #- script: "echo 'anotherProperty=foo' >>  /build/state/rs-img1.env" # next line will be this in the file mongo-image.env
-  #     - OUT: img1-rs
-  #     - IN: rs-tg3
-  #     - IN: "2img-rs"
-  #     - IN: "redis-rs"
-  #     - OUT: "env-rs"
-  #     #- NOTIFY: rs-slack
+ 

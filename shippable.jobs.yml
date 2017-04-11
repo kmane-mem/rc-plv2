@@ -1,6 +1,6 @@
 jobs:
 
-  - name: inrunsh
+  - name: inrunshtest
     type: runSh
     steps:
       - IN: myscript-repo
@@ -23,3 +23,11 @@ jobs:
       - TASK:
         - script: ls
  
+  - name: testsh
+    type: runSh
+    steps:
+      - IN: myscript-repo
+      - IN: img1sh
+      - IN: runsh-t1
+      - TASK:
+        - script: ls

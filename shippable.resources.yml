@@ -1,15 +1,15 @@
 resources:
-  - name: img1-rs
-    type: image
-    integration: docker
-    pointer:
-      sourceName: "shippabledocker/pipelinev2"
-    seed:
-      versionName: "deploy.1"
+  #- name: img1-rs
+  #  type: image
+  #  integration: docker
+  #  pointer:
+  #    sourceName: "shippabledocker/pipelinev2"
+  #  seed:
+  #    versionName: "deploy.1"
       
-  - name: sample-script-rs
+  - name: myscript-repo
     type: gitRepo
-    integration: "bitbucket-me"
+    integration: "bitbucket"
     pointer:
-      sourceName: "shiptest-rc-me/sample-script"
+      sourceName: "shiptest-rc-me/myscript"
       branch: "master"

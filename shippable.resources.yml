@@ -13,11 +13,3 @@ resources:
     pointer:
       sourceName: "shiptest-rc-me/myscript"
       branch: "master"
-
-  - name: img1sh
-    type: image
-    integration: docker
-    pointer:
-      sourceName: "shippabledocker/pipelinev2"
-    seed:
-      versionName: "deploy.2"

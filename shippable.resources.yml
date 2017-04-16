@@ -13,6 +13,8 @@ resources:
     pointer:
       sourceName: "shiptest-rc-me/sample-script"
       branch: master
+      buildOnCommit: true              
+      buildOnPullRequest: true 
     #  branches:                               
        # except:
         #  - x1.*

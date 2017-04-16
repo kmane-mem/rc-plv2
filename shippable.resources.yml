@@ -13,9 +13,9 @@ resources:
     pointer:
       sourceName: "shiptest-rc-me/sample-script"
       branch: master
-      branches:                               
-        except:
-          - x1.*
+    #  branches:                               
+       # except:
+        #  - x1.*
       #tags:
       #  only:
       #    - v1.*   

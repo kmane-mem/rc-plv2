@@ -12,10 +12,13 @@ resources:
     integration: "bitbucket"
     pointer:
       sourceName: "shiptest-rc-me/sample-script"
-     # branch: "pr"
-      tags:
+      branches:                               
         only:
-          - v1.*   
-        expect:
-          - x1.*
-      buildOnTagPush: false
+          - t1.*             
+      buildOnPullRequest: true
+      #tags:
+      #  only:
+      #    - v1.*   
+       # expect:
+       #   - x1.*
+      #buildOnTagPush: false

@@ -15,5 +15,7 @@ resources:
      # branch: "pr"
       tags:
         only:
-          - v1.*                   
+          - v1.*   
+        expect:
+          - x1.*
       buildOnTagPush: true

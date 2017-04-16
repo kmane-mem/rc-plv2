@@ -14,8 +14,8 @@ resources:
       sourceName: "shiptest-rc-me/sample-script"
      # branch: "pr"
       tags:
-        only:
-          - v1.*   
+       # only:
+        #  - v1.*   
         expect:
           - x1.*
       buildOnTagPush: true

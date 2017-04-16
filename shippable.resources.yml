@@ -12,12 +12,12 @@ resources:
     integration: "bitbucket"
     pointer:
       sourceName: "shiptest-rc-me/sample-script"
-     # branch: master                        
-      branches:
+      branch: master                        
+      #branches:
        # except:
         #  - t1.*                           
-        only:
-          - master
+       # only:
+        #  - master
      # tags:
        # except:
        #   - x1.*                          

@@ -12,4 +12,8 @@ resources:
     integration: "bitbucket"
     pointer:
       sourceName: "shiptest-rc-me/sample-script"
-      branch: "pr"
+     # branch: "pr"
+      tags:
+        only:
+          - v1.*                   
+      buildOnTagPush: true

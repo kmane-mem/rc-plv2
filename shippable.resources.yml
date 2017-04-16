@@ -7,9 +7,9 @@ resources:
     seed:
       versionName: "deploy.1"
       
-  - name: myscript-repo
+  - name: sample-scriptrepo
     type: gitRepo
     integration: "bitbucket"
     pointer:
-      sourceName: "shiptest-rc-me/myscript"
-      branch: "master"
+      sourceName: "shiptest-rc-me/sample-script"
+      branch: "pr"

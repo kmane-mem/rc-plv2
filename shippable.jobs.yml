@@ -1,13 +1,13 @@
 jobs:
 
-  - name: inrunshtest
+  - name: newrunshscript
     type: runSh
     steps:
-      - IN: myscript-repo
+      - IN: sample-scriptrepo
       - IN: runsh-t1
       - TASK:
         - script: ls
-        - script: ./IN/myscript-repo/gitRepo/echo.sh
+        - script: ./IN/sample-scriptrepo/gitRepo/echo.sh
     on_success:
       - script: echo 'infra test'
       - script: echo 'newtesting success'

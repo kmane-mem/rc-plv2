@@ -9,7 +9,7 @@ resources:
       
   - name: rc-ddccluster
     type: cluster
-    integration: plv2-ddc
+    integration: ddc
     pointer:
       sourceName : "nothing"
       

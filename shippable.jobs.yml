@@ -28,10 +28,10 @@ jobs:
       - IN: sample-scriptrepo
       
   - name: ar-release
-     type: release
-     steps:
-       - IN: ar-version
-       - IN: sample-scriptrepo 
-       - TASK: managed
-         bump: patch
+    type: release
+    steps:
+      - IN: ar-version
+      - IN: sample-scriptrepo 
+      - TASK: managed
+        bump: patch
    

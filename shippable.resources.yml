@@ -7,6 +7,12 @@ resources:
     seed:
       versionName: "deploy.1"
       
+  - name: rc-ddccluster
+    type: cluster
+    integration: plv2-ddc
+    pointer:
+      sourceName : "nothing"
+      
   - name: sample-scriptrepo
     type: gitRepo
     integration: "bitbucket"

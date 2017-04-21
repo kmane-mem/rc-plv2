@@ -26,6 +26,7 @@ jobs:
     type: deploy
     steps:
       - IN: rc-ddccluster
+      - IN: testmanifest
       - IN: sample-scriptrepo
       
   - name: ar-release

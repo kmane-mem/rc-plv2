@@ -4,6 +4,7 @@ jobs:
     type: runSh
     steps:
       - IN: sample-scriptrepo
+      - IN: runsh-t1
       - TASK:
         - script: ls
         - script: ./IN/sample-scriptrepo/gitRepo/echo.sh

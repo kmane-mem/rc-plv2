@@ -4,7 +4,6 @@ jobs:
     type: runSh
     steps:
       - IN: sample-scriptrepo
-      - IN: runsh-t1
       - TASK:
         - script: ls
         - script: ./IN/sample-scriptrepo/gitRepo/echo.sh
@@ -15,3 +14,23 @@ jobs:
       - script: echo 'testing1 failure'
       - script: echo 'failure runSh'
    
+  - name: testmanifest
+    type: manifest
+    steps:
+      - IN: img1sh
+      - IN: sample-scriptrepo
+
+ 
+  - name: testddcdeploy
+    type: deploy
+    steps:
+      - IN: rc-ddccluster
+      - IN: sample-scriptrepo
+      
+  - name: ar-release
+     type: release
+     steps:
+       - IN: ar-version
+       - IN: sample-scriptrepo 
+       - TASK: managed
+         bump: rc

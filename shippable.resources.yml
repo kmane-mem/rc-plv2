@@ -13,6 +13,11 @@ resources:
     pointer:
       sourceName : "nothing"
       
+  - name: ar-version
+    type: version
+    seed:
+      versionName: "5.4.4"
+      
   - name: sample-scriptrepo
     type: gitRepo
     integration: "bitbucket"

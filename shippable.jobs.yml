@@ -14,11 +14,10 @@ jobs:
     on_failure:
       - script: echo 'testing1 failure'
       - script: echo 'failure runSh'
-    allowPublicAccess: true
 
   - name: runshscript-pvtrepo
     type: runSh
-    allowPublicAccess: true
+    #allowPublicAccess: true
     steps:
       - IN: sample-scriptPvtRepo
       - IN: runsh-t1
@@ -40,11 +39,10 @@ jobs:
     on_failure:
       - script: echo 'testing1 failure'
       - script: echo 'failure runSh'
-    allowPublicAccess: true
     
   - name: runcliscript-pvtrepo
     type: runCLI
-    allowPublicAccess: true
+   # allowPublicAccess: true
     steps:
       - IN: sample-scriptPvtRepo
     #  - IN: runsh-t1
@@ -54,7 +52,6 @@ jobs:
 
   - name: testmanifest
     type: manifest
-    allowPublicAccess: true
     steps:
       - IN: img1sh
      # - IN: sample-scriptrepo

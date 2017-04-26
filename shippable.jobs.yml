@@ -24,6 +24,30 @@ jobs:
         - script: ls
         - script: ./IN/sample-scriptPvtRepo/gitRepo/echo.sh
 
+  - name: runcliscript-pubrepo
+    type: runCLI
+    steps:
+      - IN: sample-scriptPubRepo
+      #- IN: runsh-t1
+      - TASK:
+        - script: ls
+        - script: ./IN/sample-scriptPubRepo/gitRepo/echo.sh
+    on_success:
+      - script: echo 'infra test'
+      - script: echo 'newtesting success'
+    on_failure:
+      - script: echo 'testing1 failure'
+      - script: echo 'failure runSh'
+
+  - name: runcliscript-pvtrepo
+    type: runCLI
+    steps:
+      - IN: sample-scriptPvtRepo
+    #  - IN: runsh-t1
+      - TASK:
+        - script: ls
+        - script: ./IN/sample-scriptPvtRepo/gitRepo/echo.sh
+
   - name: testmanifest
     type: manifest
     steps:

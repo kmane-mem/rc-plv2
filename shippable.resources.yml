@@ -17,8 +17,15 @@ resources:
     type: version
     seed:
       versionName: "5.4.4"
-      
-  - name: sample-scriptrepo
+
+  - name: sample-scriptPvtRepo
+    type: gitRepo
+    integration: "bitbucket"
+    pointer:
+      sourceName: "shiptest-rc-me/sample-scriptrunsh"
+      branch: master
+
+  - name: sample-scriptPubRepo
     type: gitRepo
     integration: "bitbucket"
     pointer:
@@ -34,7 +41,7 @@ resources:
        #   - x1.*                          
        # only:
        #   - v1.*                          
-      buildOnCommit: true              
-      buildOnPullRequest: true            
+     # buildOnCommit: true              
+      #buildOnPullRequest: true            
    #   buildOnRelease: true               
     #  buildOnTagPush: true  

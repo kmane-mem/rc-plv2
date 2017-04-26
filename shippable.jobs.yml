@@ -1,25 +1,34 @@
 jobs:
 
-  - name: newrunshscript
+  - name: runshscript-pubrepo
     type: runSh
     steps:
-      - IN: sample-scriptrepo
+      - IN: sample-scriptPubRepo
       - IN: runsh-t1
       - TASK:
         - script: ls
-        - script: ./IN/sample-scriptrepo/gitRepo/echo.sh
+        - script: ./IN/sample-scriptPubRepo/gitRepo/echo.sh
     on_success:
       - script: echo 'infra test'
       - script: echo 'newtesting success'
     on_failure:
       - script: echo 'testing1 failure'
       - script: echo 'failure runSh'
-   
+
+  - name: runshscript-pvtrepo
+    type: runSh
+    steps:
+      - IN: sample-scriptPvtRepo
+      - IN: runsh-t1
+      - TASK:
+        - script: ls
+        - script: ./IN/sample-scriptPvtRepo/gitRepo/echo.sh
+
   - name: testmanifest
     type: manifest
     steps:
       - IN: img1sh
-      - IN: sample-scriptrepo
+     # - IN: sample-scriptrepo
 
  
   - name: testddcdeploy
@@ -27,13 +36,13 @@ jobs:
     steps:
       - IN: rc-ddccluster
       - IN: testmanifest
-      - IN: sample-scriptrepo
+      #- IN: sample-scriptrepo
       
   - name: ar-release
     type: release
     steps:
       - IN: ar-version
-      - IN: sample-scriptrepo 
+      #- IN: sample-scriptrepo 
       - TASK: managed
         bump: patch
    

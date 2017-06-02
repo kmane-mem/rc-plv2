@@ -2,7 +2,7 @@ jobs:
 
   - name: runshscript-pubrepo
     type: runSh
-    allowPublicAccess: true
+    #allowPublicAccess: true
     steps:
       - IN: sample-scriptPubRepo
       - IN: runsh-t1

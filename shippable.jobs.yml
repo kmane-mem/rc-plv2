@@ -2,6 +2,7 @@ jobs:
 
   - name: runshscript-pubrepo
     type: runSh
+    allowPublicAccess: true
     steps:
       - IN: sample-scriptPubRepo
       - IN: runsh-t1
@@ -43,7 +44,7 @@ jobs:
     
   - name: runcliscript-pvtrepo
     type: runCLI
-   # allowPublicAccess: 
+    allowPublicAccess: true
    #   - true
     steps:
       - IN: sample-scriptPvtRepo

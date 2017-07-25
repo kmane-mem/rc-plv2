@@ -45,3 +45,43 @@ resources:
       #buildOnPullRequest: true            
    #   buildOnRelease: true               
     #  buildOnTagPush: true  
+  
+  - name: notify-slack
+    type: notification
+    integration: "notify-slack"
+    pointer:
+      recipients:
+        - "#rc-public" 
+        - "#rc-private"
+        - "@shiptest-rc-ow"
+    flags: slack
+    
+  - name: notify-email
+    type: notification
+    pointer:
+      method: email
+      recipients: 
+        - shiptest.rc.ow@gmail.com
+        - shiptest.rc.me@gmail.com
+    flags: email
+    
+  - name: notify-irc
+    type: notification
+    pointer:
+      method: irc
+      recipients: 
+        - "webchat.irchighway.net#test-rc"
+        #- "webchat.irchighway.net#test"
+        - "webchat.irchighway.net#irc-three"
+    flags: irc
+    
+  - name: notify-hipchat
+    type: notification
+    integration: "notify-hipchat"
+    pointer:
+      recipients:
+        - "#rc-public" 
+        - "#rc-private"
+        - "@shiptestrcow"
+    flags: hipchat
+    

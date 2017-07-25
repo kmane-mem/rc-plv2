@@ -9,12 +9,35 @@ jobs:
       - TASK:
         - script: ls
         - script: ./IN/sample-scriptPubRepo/gitRepo/echo.sh
-    on_success:
-      - script: echo 'infra test'
-      - script: echo 'newtesting success'
+    on_start:
+      - NOTIFY: notify-slack
+      - NOTIFY: notify-email
+      - NOTIFY: notify-hipchat
+      - NOTIFY: notify-irc
+      - script: echo 'it is for on_start'
+    on_success:      
+      - script: echo 'test in on_success'
+      - script: ls
+      - script: echo 'it is success'
+      - NOTIFY: notify-slack
+      - NOTIFY: notify-email
+      - NOTIFY: notify-hipchat
+      - NOTIFY: notify-irc
+    # # - script: ./IN/sample-script-3/gitRepo/echo.sh
     on_failure:
-      - script: echo 'testing1 failure'
-      - script: echo 'failure runSh'
+      - script: echo 'testing1 failure'      
+      - script: pwd
+      - script: echo 'OOPS on_failure :('
+      - NOTIFY: notify-slack
+      - NOTIFY: notify-email
+      - NOTIFY: notify-hipchat
+      - NOTIFY: notify-irc
+    on_cancel:
+      - script: echo "This works on_always"
+      - NOTIFY: notify-slack
+      - NOTIFY: notify-email
+      - NOTIFY: notify-hipchat
+      - NOTIFY: notify-irc
 
   - name: runshscript-pvtrepo
     type: runSh
@@ -25,6 +48,12 @@ jobs:
       - TASK:
         - script: ls
         - script: ./IN/sample-scriptPvtRepo/gitRepo/echo.sh
+    always:
+      - script: echo "This works on_always"
+      - NOTIFY: notify-slack
+      - NOTIFY: notify-email
+      - NOTIFY: notify-hipchat
+      - NOTIFY: notify-irc
 
   - name: runcliscript-pubrepo
     type: runCLI
@@ -35,12 +64,35 @@ jobs:
       - TASK:
         - script: ls
         - script: ./IN/sample-scriptPubRepo/gitRepo/echo.sh
-    on_success:
-      - script: echo 'infra test'
-      - script: echo 'newtesting success'
+    on_start:
+      - NOTIFY: notify-slack
+      - NOTIFY: notify-email
+      - NOTIFY: notify-hipchat
+      - NOTIFY: notify-irc
+      - script: echo 'it is for on_start'
+    on_success:      
+      - script: echo 'test in on_success'
+      - script: ls
+      - script: echo 'it is success'
+      - NOTIFY: notify-slack
+      - NOTIFY: notify-email
+      - NOTIFY: notify-hipchat
+      - NOTIFY: notify-irc
+    # # - script: ./IN/sample-script-3/gitRepo/echo.sh
     on_failure:
-      - script: echo 'testing1 failure'
-      - script: echo 'failure runSh'
+      - script: echo 'testing1 failure'      
+      - script: pwd
+      - script: echo 'OOPS on_failure :('
+      - NOTIFY: notify-slack
+      - NOTIFY: notify-email
+      - NOTIFY: notify-hipchat
+      - NOTIFY: notify-irc
+    on_cancel:
+      - script: echo "This works on_always"
+      - NOTIFY: notify-slack
+      - NOTIFY: notify-email
+      - NOTIFY: notify-hipchat
+      - NOTIFY: notify-irc
     
   - name: runcliscript-pvtrepo
     type: runCLI
@@ -52,6 +104,12 @@ jobs:
       - TASK:
         - script: ls
         - script: ./IN/sample-scriptPvtRepo/gitRepo/echo.sh
+    always:
+      - script: echo "This works on_always"
+      - NOTIFY: notify-slack
+      - NOTIFY: notify-email
+      - NOTIFY: notify-hipchat
+      - NOTIFY: notify-irc
 
   - name: testmanifest
     type: manifest

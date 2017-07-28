@@ -200,7 +200,7 @@ jobs:
       - IN: rc-ddccluster
       - IN: runcliscript-pubrepo2
       - IN: testmanifest2runsh
-    flags:
-      - ar-releaseflag
+   # flags:
+   #   - ar-releaseflag
       
       

@@ -194,13 +194,13 @@ jobs:
       - TASK:
         - script: ls
       
-  - name: ar-releasetestflag
+  - name: ar-releaseflag
     type: deploy
     steps:
       - IN: rc-ddccluster
       - IN: runcliscript-pubrepo2
       - IN: testmanifest2runsh
     flags:
-      - ar-releasetestflag
+      - ar-releaseflag
       
       

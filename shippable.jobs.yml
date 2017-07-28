@@ -194,7 +194,7 @@ jobs:
       - TASK:
         - script: ls
       
-  - name: testddcdeploy1
+  - name: testddcdeploytestflag
     type: deploy
     steps:
       - IN: rc-ddccluster

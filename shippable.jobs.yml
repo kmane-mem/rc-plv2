@@ -133,3 +133,71 @@ jobs:
       - TASK: managed
         bump: patch
    
+  - name: testmanifest1
+    type: manifest
+    steps:
+      - IN: img1sh
+      
+  - name: testddcdeploy1
+    type: deploy
+    steps:
+      - IN: rc-ddccluster
+      - IN: testmanifest1
+      
+  - name: runcliscript-pvtrepo1
+    type: runCLI
+   # allowPublicAccess: true
+   #   - true
+    steps:
+      - IN: sample-scriptPvtRepo
+    #  - IN: runsh-t1
+      - TASK:
+        - script: ls
+        #- script: ./IN/sample-scriptPvtRepo/gitRepo/echo.sh  
+        
+  - name: runcliscript-pvtrepo2
+    type: runCLI
+   # allowPublicAccess: true
+   #   - true
+    steps:
+      - IN: sample-scriptPvtRepo
+      - IN: runcliscript-pvtrepo1
+    #  - IN: runsh-t1
+      - TASK:
+        - script: ls
+        - script: ./IN/sample-scriptPvtRepo/gitRepo/echo.sh
+      - OUT: imgOutRunSh
+        
+  - name: ar-releasetestflag
+    type: release    
+    steps:
+      - IN: ar-version
+      - IN: runcliscript-pvtrepo2 
+      - IN: testddcdeploy1
+      - TASK: managed
+        bump: patch  
+    
+  - name: testmanifest2runsh
+    type: manifest
+    steps:
+      - IN: img1sh
+    flags:
+      - testmanifest2runsh
+  
+  - name: runcliscript-pubrepo2
+    type: runCLI
+    allowPublicAccess: false
+    steps:
+      - IN: sample-scriptPubRepo
+      - IN: imgOutRunSh
+      #- IN: runsh-t1
+      - TASK:
+        - script: ls
+      
+  - name: testddcdeploy1
+    type: deploy
+    steps:
+      - IN: rc-ddccluster
+      - IN: runcliscript-pubrepo2
+      - IN: testmanifest2runsh
+      

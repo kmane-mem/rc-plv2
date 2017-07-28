@@ -6,6 +6,14 @@ resources:
       sourceName: "shippabledocker/pipelinev2"
     seed:
       versionName: "deploy.1"
+  
+  - name: imgOutRunSh
+    type: image
+    integration: docker
+    pointer:
+      sourceName: "shippabledocker/pipelinev2"
+    seed:
+      versionName: "deploy.2"
       
   - name: rc-ddccluster
     type: cluster
